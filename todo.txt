@@ -1,0 +1,78 @@
+Team Skull
+Jake Zaia, Rihui Zheng, Tim Wang
+
+1. We will first work on Pokemon.java. We will set it as an abstract class
+and the superclass for all of the pokemons. It will contain protected instance
+variables and abstract methods:
+	
+•int _hp, _speed, _spatk, _atk, _spdef, _def;
+
+
+•float _currHP;
+
+
+•String _type1;
+
+
+•String _type2;  //can be Null
+
+
+•String _name;
+
+
+•String _statusEffect;
+
+
+•Object[] _statMods;
+
+
+•abstract void move1();
+
+
+•abstract void move2();
+
+
+•abstract void move3();
+
+
+•abstract void move4();
+
+
+2. We will then work on BattleUtils.java. It will contain static methods for all
+of the calculations in a pokemon battle. The driver file would import BattlesUtils
+methods:
+
+•static float consultEffectiveness(String, String, String);
+
+
+•static float calcDamage(int, int, int, int);
+
+
+•static float calcModifier(int, int, float, float); //Helper function for calcDamage
+
+
+•static float statusEffect(String);
+
+
+3. We will make 2 pokemons with 2 separate files, both subclasses to Pokemon. 
+
+4. Driver. 
+
+
+Endresult: 
+•A class for each Pokémon (2 for now)
+•Each Pokémon will have 4 moves 
+•Stored as instance variable Strings
+•Inherits abstract from superclass to prevent glitching
+•Each Pokémon will have their own unique base stats, possible moves and types based on the actual game. 
+•Also instance variables, ints or Strings depending on what it is
+•Also inherited from superclass
+•Will utilize the official Pokémon battle mechanics (as of gen 7)
+•Damage formula
+•Type effectiveness
+•Turn order
+•Will have an option to generate a Pokémon of your choice (or random) against a random opponent 
+•Store names in an array, having the user pick one.
+•If the name is not in the array, pick randomly
+
+
