@@ -1,10 +1,10 @@
-<Team Name>
-<Member 0 Name>
-<Member 1 Name>
-<Member 2 Name>
-pd <pd#>
+Team Skull
+Tim Wang
+RiHui Zheng
+Jake Zaia
+pd 05
 ---------------------
-<Project>
+Pokemon Battle Simulator
 
 
 Suggested usage: 
@@ -57,11 +57,21 @@ tales of wisdom gained...
    \:\/.:| |\:\____/\\ ..::/ / \:\/___/\\:\_\ \ \\:\_\ \ \ 
     \____/_/ \_____\/ \___/_(   \_____\/ \_____\/ \_____\/ 
 ==============================================================
+2017-01-10
+--------------------------------------------------------------
+Tim Wang ::
+RiHui Zheng ::
+Jake Zaia ::
+
+
+
+
+
 
 
 yyyy-mm-dd
 --------------------------------------------------------------
-<Member> :: <Thing member did.>
-<Member> :: <Thing member did.>
-<Member> :: <Thing member did.>
+Tim Wang ::
+RiHui Zheng ::
+Jake Zaia ::
 ==============================================================

@@ -164,4 +164,13 @@ public class BattleUtuils{
 		return effectiveness; }
 	return effectiveness;
     }
+
+    public static float calcModifier(Pokemon attacker, Pokemon defender){ //Doesn't account for held items/abilities
+	return 0.0; //temp	
+    }
+
+    public static int calcDamage(Pokemon attacker, Pokemon defender, int moveNum){
+	float mod = calcModifier(attacker, defender);
+	return 0; //temp
+    }
 }
