@@ -1,7 +1,7 @@
 Team Skull
 Jake Zaia, Rihui Zheng, Tim Wang
 
-1. We will first work on Pokemon.java. We will set it as an abstract class
+Pokemon.java: We will set it as an abstract class
 and the superclass for all of the pokemons. It will contain protected instance
 variables and abstract methods:
 	
@@ -37,8 +37,7 @@ variables and abstract methods:
 
 •abstract void move4();
 
-
-2. We will then work on BattleUtils.java. It will contain static methods for all
+BattleUtils.java: It will contain static methods for all
 of the calculations in a pokemon battle. The driver file would import BattlesUtils
 methods:
 
@@ -54,9 +53,9 @@ methods:
 •static float statusEffect(String);
 
 
-3. We will make 2 pokemons with 2 separate files, both subclasses to Pokemon. 
+We will make 2 pokemons with 2 separate files, both subclasses to Pokemon. 
 
-4. Driver. 
+Driver- Battle sequence.
 
 
 Endresult: 
