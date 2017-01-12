@@ -54,7 +54,7 @@ LESSONS LEARNED
 ==============================================================
 2017-01-10
 --------------------------------------------------------------
-Tim Wang ::
+Tim Wang :: Created Pokemon abstract class and its abstract methods & instance variables.
 RiHui Zheng ::
 Jake Zaia :: Reformatted devlog, and test for planning. Began work on BattleUtils functionality, and layed groundwork for Pokemon.java
 
