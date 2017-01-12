@@ -7,7 +7,7 @@ public class Pikachu extends Pokemon{
 	_speed = (int)(Math.random() *72 + 85);
 	_atk = (int)(Math.random() *64 + 54);
 	_def = (int)(Math.random() *62 + 40);
-	_curr = _hp;
+	_currHP = _hp;
 	_type1 = "Electric";
     }
 
