@@ -5,11 +5,23 @@ public abstract class Pokemon{
     public final String _name;
     protected String _statusEffect;
     protected Object[] _statMods;
+    protected Move _move1;
+    protected Move _move2;
+    protected Move _move3;
+    protected Move _move4;
 
     public void takeDamage(int d){ _currhp -= d}
 
-    abstract void move1();
-    abstract void move2();
-    abstract void move3();
-    abstract void move4();
+    public void move1(){
+	_move1.use();;
+    }
+    public void move2(){
+	_move2.use();;
+    }
+    public void move3(){
+	_move3.use();;
+    }
+    public void move4(){
+	_move4.use();;
+    }
 }
