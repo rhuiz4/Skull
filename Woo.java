@@ -2,25 +2,136 @@
 //APCS Pd5
 //Final Project: Gotta Catch 'Em All
 
+import csi.Keyboard;
 public class Woo {
     
     public static void main(String[] arr) {
-	//Openning Message
-	/*	System.out.println("Hello! Sorry to keep you waiting!\n
-                            Welcome to the World of Pokémon!\n
-                            My name is Oak. People affectionately refer to me as the Pokémon Professor.\n
-                            This world is inhabited far and wide by creatures called Pokémon!\n
-                            For some people, Pokémon are pets. Other use them for battling.\n
-                            As for myself… I study Pokémon as a profession. But first, tell me a little about yourself.\n
-                            ");*/
+	
 	Pokemon opponent = new Pikachu();
 	Pokemon player = new Pikachu();
 	System.out.println("A wild Pikachu appeared!\nGo Pikachu");
-	System.out.println("\n\nOpponent's Pikachu\nHP: " + "opponent.HP" + "%");
 
-	System.out.println("\n\nPlayer's Pikachu\nHP: " + "player.HP" + "%");
-	System.out.println("\nWhat will Pikachu do?\n" + player._move1 + "\t" + player._move2 + "\n" + player._move3 + "/t" + player._move4);
+	int playerMove = 0;
+	int opponentMove = 0;
+	boolean validMove = false;
+	boolean playerFainted = false;
+	boolean opponentFainted = false;
+	boolean battleOver = false;
 	
+	while (!battleOver) {
+	    System.out.println("\n\nOpponent's Pikachu\nHP: " + "opponent.HP" + "%");
+	    System.out.println("\n\nPlayer's Pikachu\nHP: " + "player.HP" + "%");
+	    
+	    System.out.println("\nWhat will Pikachu do?\nPlease enter the number corresponding to the move you want to use:\n1) " + player._move1 + "\t2) " + player._move2 + "\n3) " + player._move3 + "/t4) " + player._move4);
 
-    }
-}
+	    while (!validMove) {
+		playerMove = Keyboard.readInt();
+		if (playerMove >= 1 && playerMove <= 4) {
+		    validMove = true;
+		}
+		else {
+		    System.out.println("Please input an integer between 1-4 corresponding to the move you want to use:");
+		}
+
+	    }
+	    
+
+	    //if enemy is faster
+	    if (opponent._speed > player._speed) {
+		opponentMove = (int)(Math.random * 5);		
+		if (opponentMove == 1){
+		    System.out.println("The foe's Pikachu used " + opponent._move1 + "!");
+		    opponent.move1(player);
+		}
+		else if (opponentMove == 2){
+		    System.out.println("The foe's Pikachu used " + opponent._move2 + "!");
+		    opponent.move2(player);
+		}
+		else if (opponentMove == 3){
+		    System.out.println("The foe's Pikachu used " + opponent._move3 + "!");
+		    opponent.move3(player);
+		}
+		else {
+		    System.out.println("The foe's Pikachu used " + opponent._move4 + "!");
+k		    opponent.move4(player);
+		}
+
+		//if player's Pokemon is still alive
+		if (player._HP > 0){
+		    if (playerMove == 1){
+			System.out.println("Pikachu used " + player._move1 + "!");
+			player.move1(opponent);
+		    }
+		    else if (playerMove == 2){
+			System.out.println("Pikachu used " + player._move2 + "!");
+			player.move2(opponent);
+		    }
+      		    else if (playerMove == 3){
+			System.out.println("Pikachu used " + player._move3 + "!");
+			player.move3(opponent);
+		    }
+		    else if (playerMove == 4){
+			System.out.println("Pikachu used " + player._move4 + "!");
+			player.move4(opponent);
+		    }
+		}
+		else
+		    playerFainted = true;
+	    }
+
+	    //if player is faster
+	    if (opponent._speed < player._speed) {
+		if (playerMove == 1){
+			System.out.println("Pikachu used " + player._move1 + "!");
+			player.move1(opponent);
+		    }
+		    else if (playerMove == 2){
+			System.out.println("Pikachu used " + player._move2 + "!");
+			player.move2(opponent);
+		    }
+      		    else if (playerMove == 3){
+			System.out.println("Pikachu used " + player._move3 + "!");
+			player.move3(opponent);
+		    }
+		    else if (playerMove == 4){
+			System.out.println("Pikachu used " + player._move4 + "!");
+			player.move4(opponent);
+		    }
+		//if enemy is still alive
+		if (opponent._HP > 0) {
+		    opponentMove = (int)(Math.random * 5);		
+		    if (opponentMove == 1){
+			System.out.println("The foe's Pikachu used " + opponent._move1 + "!");
+			opponent.move1(player);
+		    }
+		    else if (opponentMove == 2){
+			System.out.println("The foe's Pikachu used " + opponent._move2 + "!");
+			opponent.move2(player);
+		    }
+		    else if (opponentMove == 3){
+			System.out.println("The foe's Pikachu used " + opponent._move3 + "!");
+			opponent.move3(player);
+		    }
+		    else {
+			System.out.println("The foe's Pikachu used " + opponent._move4 + "!");
+			opponent.move4(player);
+		    }
+		}
+		else
+		    opponentFainted = true;
+	    }
+	    //see if anyone fainted
+	    if (playerFainted || opponentFainted) 
+		battleOver = true;
+	    }
+	}
+
+    //who wins?
+    if (playerFainted)
+	System.out.println("Pikachu fainted! You ran out of usable Pokemon! You lost $100,000! Oh Noooooooo!");
+    else
+	System.out.println("The wild Pikachu fainted! You found $100,000! Boo Yea!");
+
+    }//end main
+    
+}//end class
