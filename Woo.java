@@ -84,6 +84,9 @@ public class Woo {
 		else{
 		    playerFainted = true;
 		}
+		if (opponent.getCurrHP() <= 0)
+		    opponentFainted = true;
+		
 	    }
 
 	    //if player is faster or tied
@@ -126,6 +129,8 @@ public class Woo {
 		}
 		else
 		    opponentFainted = true;
+		if (player.getCurrHP() <= 0)
+		    playerFainted = true;
 	    }
 	    //see if anyone fainted
 	    if (playerFainted || opponentFainted) 
