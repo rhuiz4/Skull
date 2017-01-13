@@ -165,12 +165,18 @@ public class BattleUtuils{
 	return effectiveness;
     }
 
-    public static float calcModifier(Pokemon attacker, Pokemon defender, Move m){ //Doesn't account for held items/abilities
-	return 0.0; //temp	
+    public static double calcModifier(Pokemon attacker, Pokemon defender, Move m){ //Doesn't account for held items/abilities
+	double mod = (.15 * Math.random() + .85);
+	if (m._type == attacker.getType1() || m._type == attacker.getType2())
+	    mod *= 1.5;
+	if (Math.random() * 16 < 1)
+	    mod *= 1.5;
+	mod *= computeEffectiveness(m._type, defender.getType1(), defender.gettype2());
+	return mod;	
     }
 
     public static int calcDamage(Pokemon attacker, Pokemon defender, Move m){
-	float mod = calcModifier(attacker, defender, m);
+	double mod = calcModifier(attacker, defender, m);
 
 	//assumes Pokemon level is always 50
 	if (m._isPhysical)
