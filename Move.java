@@ -5,7 +5,7 @@ public class Move{
     public float _acc;
     public Boolean _isPhysical, _makesContact;
 
-    public Move(String name, String type, int basePow, float acc, Boolean pyshical, Boolean contact){
+    public Move(String name, String type, int basePow, float acc, Boolean physical, Boolean contact){
 	_name = name;
 	_type = type;
 	_basePow = basePow;
