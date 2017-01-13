@@ -129,11 +129,7 @@ public class Woo {
 	    //see if anyone fainted
 	    if (playerFainted || opponentFainted) 
 		battleOver = true;
-<<<<<<< HEAD
-	    }
-=======
 	}
->>>>>>> ec4def4fdb20c5a0ef778d4a8c4a2763e95c0676
 
     //who wins?
 	if (playerFainted){
