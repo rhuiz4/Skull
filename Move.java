@@ -1,9 +1,9 @@
 public class Move{
+
     public String _name, _type;
     public int _basePow;
     public float _acc;
     public bool _isPhysical, _makesContact;
-
 
     public Move(String name, String type, int basePow, float acc, bool pyshical, bool contact){
 	_name = name;

@@ -2,7 +2,7 @@
 //APCS Pd5
 //Final Project: Gotta Catch 'Em All
 
-import csi.Keyboard;
+import cs1.Keyboard;
 public class Woo {
     
     public static void main(String[] arr) {
@@ -43,7 +43,7 @@ public class Woo {
 
 	    //if enemy is faster
 	    if (opponent.getSpeed() > player.getSpeed()) {
-		opponentMove = (int)(Math.random * 5);		
+		opponentMove = (int)(Math.random() * 5);		
 		if (opponentMove == 1){
 		    System.out.println("The foe's Pikachu used " + opponent._move1 + "!");
 		    opponent.move1(player);
@@ -58,7 +58,7 @@ public class Woo {
 		}
 		else {
 		    System.out.println("The foe's Pikachu used " + opponent._move4 + "!");
-k		    opponent.move4(player);
+		    opponent.move4(player);
 		}
 
 		//if player's Pokemon is still alive
@@ -85,7 +85,7 @@ k		    opponent.move4(player);
 	    }
 
 	    //if player is faster or tied
-	    if (opponent.getSpeed() <= player._getSpeed()) {
+	    if (opponent.getSpeed() <= player.getSpeed()) {
 		if (playerMove == 1){
 			System.out.println("Pikachu used " + player._move1 + "!");
 			player.move1(opponent);
@@ -104,7 +104,7 @@ k		    opponent.move4(player);
 		    }
 		//if enemy is still alive
 		if (opponent.getCurrHP() > 0) {
-		    opponentMove = (int)(Math.random * 5);		
+		    opponentMove = (int)(Math.random() * 5);		
 		    if (opponentMove == 1){
 			System.out.println("The foe's Pikachu used " + opponent._move1 + "!");
 			opponent.move1(player);
@@ -128,7 +128,6 @@ k		    opponent.move4(player);
 	    //see if anyone fainted
 	    if (playerFainted || opponentFainted) 
 		battleOver = true;
-	    }
 	}
 
     //who wins?
