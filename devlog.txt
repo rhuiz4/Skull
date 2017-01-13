@@ -68,7 +68,7 @@ Jake Zaia :: Reformatted devlog, and test for planning. Began work on BattleUtil
 2017-01-12
 --------------------------------------------------------------
 Tim Wang :: Changed pokemon's methods to public instead of abstract. Created Pikachu. Fixed a bunch of typos and uploaded cs1 & keyboard.
-RiHui Zheng :: Finished Woo.java for MVP.
+RiHui Zheng :: Finished Woo.java for MVP, fixed minor bugs everywhere, gave Pikachu 4 distinct moves.
 Jake Zaia :: Created class Move, finished BattleUtils, & fixed various formatting issues. 
 
 ==============================================================

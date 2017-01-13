@@ -42,7 +42,7 @@ public class Woo {
 	    
 
 	    //if enemy is faster
-	    if (opponent.getSpeed() > player.getSpeed()) {
+	    if (opponent.getSpeed() >= player.getSpeed()) {
 		opponentMove = (int)(Math.random() * 5);		
 		if (opponentMove == 1){
 		    System.out.println("The foe's Pikachu used " + opponent._move1 + "!");
