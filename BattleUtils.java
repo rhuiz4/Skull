@@ -171,7 +171,7 @@ public class BattleUtils{
 	    mod *= 1.5;
 	if (Math.random() * 16 < 1)
 	    mod *= 1.5;
-	mod *= computeEffectiveness(m._type, defender.getType1(), defender.gettype2());
+	mod *= computeEffectiveness(m._type, defender.getType1(), defender.getType2());
 	return mod;	
     }
 
