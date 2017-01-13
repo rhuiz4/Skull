@@ -1,6 +1,6 @@
 public abstract class Pokemon{
     protected int _hp, _speed, _spatk, _atk, _spdef, _def;
-    protected int _currHP;
+    protected int _currhp;
     protected String _type1, _type2, _name;  //type2 can be Null
     protected String _statusEffect;
     protected Object[] _statMods;
@@ -30,7 +30,7 @@ public abstract class Pokemon{
     public int getMaxHP(){
 	return _hp;}
     public int getCurrHP(){
-	return _currHP;}
+	return _currhp;}
     public int getSpeed(){
 	return _speed;}
     public int getAtk(){
