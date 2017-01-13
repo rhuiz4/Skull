@@ -1,4 +1,4 @@
-public class BattleUtuils{
+public class BattleUtils{
     public static float computeEffectiveness (String atktype, String deftype1, String deftype2){
 	float effectiveness = 1;
 	if (atktype.equals("Electric"))
