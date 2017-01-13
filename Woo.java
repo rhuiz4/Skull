@@ -2,7 +2,7 @@
 //APCS Pd5
 //Final Project: Gotta Catch 'Em All
 
-import csi.Keyboard;
+import cs1.Keyboard;
 public class Woo {
     
     public static void main(String[] arr) {
@@ -58,7 +58,7 @@ public class Woo {
 		}
 		else {
 		    System.out.println("The foe's Pikachu used " + opponent._move4 + "!");
-k		    opponent.move4(player);
+		    opponent.move4(player);
 		}
 
 		//if player's Pokemon is still alive
@@ -80,8 +80,9 @@ k		    opponent.move4(player);
 			player.move4(opponent);
 		    }
 		}
-		else
+		else{
 		    playerFainted = true;
+		}
 	    }
 
 	    //if player is faster or tied
@@ -129,14 +130,15 @@ k		    opponent.move4(player);
 	    if (playerFainted || opponentFainted) 
 		battleOver = true;
 	    }
-	}
 
     //who wins?
-    if (playerFainted)
-	System.out.println("Pikachu fainted! You ran out of usable Pokemon! You lost $100,000! Oh Noooooooo!");
-    else
-	System.out.println("The wild Pikachu fainted! You found $100,000! Boo Yea!");
-
+	if (playerFainted){
+	    System.out.println("Pikachu fainted! You ran out of usable Pokemon! You lost $100,000! Oh Noooooooo!");
+	}
+	else{
+	    System.out.println("The wild Pikachu fainted! You found $100,000! Boo Yea!");
+	}
+  
     }//end main
     
 }//end class
