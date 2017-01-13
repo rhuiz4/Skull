@@ -69,5 +69,5 @@ Jake Zaia :: Reformatted devlog, and test for planning. Began work on BattleUtil
 --------------------------------------------------------------
 Tim Wang :: Changed pokemon's methods to public instead of abstract. Created Pikachu.
 RiHui Zheng ::
-Jake Zaia ::
+Jake Zaia :: Created class Move, finished BattleUtils, & fixed various formatting issues.
 ==============================================================

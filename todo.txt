@@ -12,12 +12,11 @@ Jake Zaia, Rihui Zheng, Tim Wang
 =============================
 	    TO-DO: 
 =============================
-
-0   -Finish abstract class Pokemon
+1   -Finish abstract class Pokemon
 0   -Figure out Pokemon move syntax/layout
 0   -Create 2 pokemon subclass that inherit abstract from superclass as test
 0   -Start assigning each Pokemon their respective stats & moves
-0   -Begin utilization of battle mechanics in BattleUtils.java
+1   -Begin utilization of battle mechanics in BattleUtils.java
 0   -Figure out/incorperate turn order
 0   -Incorperate option to generate a Pokémon of your choice (or random) against a random opponent 
 
