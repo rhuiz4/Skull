@@ -9,6 +9,10 @@ public class Pikachu extends Pokemon{
 	_def = (int)(Math.random() *62 + 40);
 	_currHP = _hp;
 	_type1 = "Electric";
+	_move1 = new Move("Thunderbolt", "Electric", 90, 1, false, false);
+	_move2 = _move1; //temp
+	_move3 = _move1; //temp
+	_move4 = _move1; //temp
     }
 
 }

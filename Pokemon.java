@@ -12,16 +12,16 @@ public abstract class Pokemon{
 
     public void takeDamage(int d){ _currhp -= d}
 
-    public void move1(){
-	_move1.use();;
+    public void move1(Pokemon p){
+	_move1.use(p);
     }
-    public void move2(){
-	_move2.use();;
+    public void move2(Pokemon p){
+	_move2.use(p);
     }
-    public void move3(){
-	_move3.use();;
+    public void move3(Pokemon p){
+	_move3.use(p);
     }
-    public void move4(){
-	_move4.use();;
+    public void move4(Pokemon p){
+	_move4.use(p);
     }
 }
