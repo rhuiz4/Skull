@@ -1,7 +1,7 @@
 public class BattleUtils{
     public static float computeEffectiveness (String atktype, String deftype1, String deftype2){
 	float effectiveness = 1;
-	if (deftype2 .equals(null))
+	if (deftype2 == null)
 	    deftype2 = "None";
 	if (atktype.equals("Electric"))
 	    {
