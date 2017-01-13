@@ -1,10 +1,24 @@
 public class Move{
-    private String _name, _type;
-    private int _basePow;
-    private float _acc;
-    private bool _isPhysical, _makesContact;
+
+    public String _name, _type;
+    public int _basePow;
+    public float _acc;
+    public bool _isPhysical, _makesContact;
+
+    public Move(String name, String type, int basePow, float acc, bool pyshical, bool contact){
+	_name = name;
+	_type = type;
+	_basePow = basePow;
+	_acc = acc;
+	_isPhysical = physical;
+	_makesContact = contact;
+    }
+
+    public String toString(){
+	return _name;
+    }
     
-    public int void use(Pokemon foe);
-
-
+    public void use(Pokemon user, Pokemon foe){
+	foe.takeDamage(BattleUtils.calcDamage(user, foe, this));
+    }
 }

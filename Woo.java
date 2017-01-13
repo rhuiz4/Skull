@@ -43,7 +43,7 @@ public class Woo {
 
 	    //if enemy is faster
 	    if (opponent.getSpeed() > player.getSpeed()) {
-		opponentMove = (int)(Math.random * 5);		
+		opponentMove = (int)(Math.random() * 5);		
 		if (opponentMove == 1){
 		    System.out.println("The foe's Pikachu used " + opponent._move1 + "!");
 		    opponent.move1(player);
@@ -86,7 +86,7 @@ public class Woo {
 	    }
 
 	    //if player is faster or tied
-	    if (opponent.getSpeed() <= player._getSpeed()) {
+	    if (opponent.getSpeed() <= player.getSpeed()) {
 		if (playerMove == 1){
 			System.out.println("Pikachu used " + player._move1 + "!");
 			player.move1(opponent);
@@ -105,7 +105,7 @@ public class Woo {
 		    }
 		//if enemy is still alive
 		if (opponent.getCurrHP() > 0) {
-		    opponentMove = (int)(Math.random * 5);		
+		    opponentMove = (int)(Math.random() * 5);		
 		    if (opponentMove == 1){
 			System.out.println("The foe's Pikachu used " + opponent._move1 + "!");
 			opponent.move1(player);
@@ -129,7 +129,11 @@ public class Woo {
 	    //see if anyone fainted
 	    if (playerFainted || opponentFainted) 
 		battleOver = true;
+<<<<<<< HEAD
 	    }
+=======
+	}
+>>>>>>> ec4def4fdb20c5a0ef778d4a8c4a2763e95c0676
 
     //who wins?
 	if (playerFainted){

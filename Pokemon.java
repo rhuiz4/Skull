@@ -9,9 +9,13 @@ public abstract class Pokemon{
     public Move _move3;
     public Move _move4;
 
+<<<<<<< HEAD
     public void takeDamage(int d){
 	_currhp -= d;
     }
+=======
+    public void takeDamage(int d){ _currhp -= d};
+>>>>>>> ec4def4fdb20c5a0ef778d4a8c4a2763e95c0676
 
 
     //Move using methods
