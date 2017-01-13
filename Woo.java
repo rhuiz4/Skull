@@ -20,8 +20,8 @@ public class Woo {
 	
 	while (!battleOver) {
 	    //displays HP
-	    oppHP = opponent.getCurrHP() / opponent.getMaxHP() * 100;
-	    playHP = player.getCurrHP() / player.getMaxHP() * 100;
+	    oppHP = (double)opponent.getCurrHP() / opponent.getMaxHP() * 100;
+	    playHP =(double) player.getCurrHP() / player.getMaxHP() * 100;
 	    System.out.println("\n\nOpponent's Pikachu\nHP: " + oppHP + "%");
 	    System.out.println("\n\nPlayer's Pikachu\nHP: " + playHP + "%");
 	    
@@ -29,6 +29,7 @@ public class Woo {
 	    System.out.println("\nWhat will Pikachu do?\nPlease enter the number corresponding to the move you want to use:\n1) " + player._move1 + "\t2) " + player._move2 + "\n3) " + player._move3 + "\t4) " + player._move4);
 
 	    //keeps on asking the user to put in integer until they input a valid input
+	    validMove = false;
 	    while (!validMove) {
 		playerMove = Keyboard.readInt();
 		if (playerMove >= 1 && playerMove <= 4) {
