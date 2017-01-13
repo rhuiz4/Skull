@@ -9,10 +9,8 @@ public abstract class Pokemon{
     public Move _move3;
     public Move _move4;
 
+    public void takeDamage(int d){ _currhp -= d;}
 
-    public void takeDamage(int d){
-	_currhp -= d;
-    }
 
     //Move using methods
     public void move1(Pokemon p){
@@ -31,7 +29,7 @@ public abstract class Pokemon{
     //Accessor methods
     public int getMaxHP(){
 	return _hp;}
-    public int getHP(){
+    public int getCurrHP(){
 	return _currhp;}
     public int getSpeed(){
 	return _speed;}
