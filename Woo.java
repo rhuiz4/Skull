@@ -37,7 +37,7 @@ public class Woo {
 	System.out.println(line);
 
 	while (!exit) {
-	    System.out.println("Hello again, " + pname + ". What would you like to do? \n 1.Battle\n 2.Exit\n(Please enter the integer corresponding to your choice:");
+	    System.out.println("Hello again, " + pname + ". What would you like to do? \n 1.Battle\n 2.Exit\nPlease enter the number corresponding to your choice:");
 	    int mode = 0;
 	    int pmode = 0;
 		
@@ -45,17 +45,17 @@ public class Woo {
 		pmode = Keyboard.readInt();
 		if (pmode == 1)
 		    mode = 1;
-		if (pmode == 2)
+		else if (pmode == 2)
 		    mode = 2;
 		else
-		    System.out.println("Input Invalid. Please enter an integer corresponding to what you want to do above:");
+		    System.out.println("Input Invalid. Please enter the number corresponding to what you want to do above:");
 	    }
 
 	    if (mode == 1) {
 		Pokemon opponent = new Pikachu();
 		Pokemon player = new Pikachu();
-		double oppHP = 0;
-		double playHP = 0;
+		int oppHP = 0;
+		int playHP = 0;
 		int playerMove = 0;
 		int opponentMove = 0;
 		boolean validMove = false;
@@ -65,9 +65,11 @@ public class Woo {
 		System.out.println("A wild Pikachu appeared!\nGo Pikachu");
 		while (!battleOver) {
 		    //displays HP
-		    oppHP = (double)opponent.getCurrHP() / opponent.getMaxHP() * 100;
-		    playHP =(double) player.getCurrHP() / player.getMaxHP() * 100;
+		    oppHP = (int)((double)opponent.getCurrHP() / opponent.getMaxHP() * 100);
+		    playHP =(int)((double) player.getCurrHP() / player.getMaxHP() * 100);
 		    System.out.println("\n\nOpponent's Pikachu\nHP: " + oppHP + "%");
+		    System.out.println(opponent + "\n\n");
+		    System.out.println(player);
 		    System.out.println("\n\nPlayer's Pikachu\nHP: " + playHP + "%");
 	    
 		    //displays moves
