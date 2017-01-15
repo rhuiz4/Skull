@@ -69,8 +69,8 @@ public class Woo {
 		    playHP =(int)((double) player.getCurrHP() / player.getMaxHP() * 100);
 		    System.out.println("\n\nOpponent's Pikachu\nHP: " + oppHP + "%");
 		    System.out.println(opponent + "\n\n");
-		    System.out.println(player);
-		    System.out.println("\n\nPlayer's Pikachu\nHP: " + playHP + "%");
+		    
+		    System.out.println("\n\n" + pname + "'s Pikachu\nHP: " + playHP + "%");
 	    
 		    //displays moves
 		    System.out.println("\nWhat will Pikachu do?\nPlease enter the number corresponding to the move you want to use:\n1) " + player._move1 + "\t2) " + player._move2 + "\n3) " + player._move3 + "\t4) " + player._move4);
