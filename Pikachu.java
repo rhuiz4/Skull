@@ -10,9 +10,9 @@ public class Pikachu extends Pokemon{
 	_currhp = _hp;
 	_type1 = "Electric";
 	_move1 = new Move("Thunderbolt", "Electric", 90, 1, false, false);
-	_move2 = new Move("Iron Tail", "Steel", 100, 75, true, true);
-	_move3 = new Move("Thunder", "Electric", 110, 70, false, false);
-	_move4 = new Move("Dig", "Ground", 80, 100, true, true);
+	_move2 = new Move("Iron Tail", "Steel", 100, 0.75, true, true);
+	_move3 = new Move("Thunder", "Electric", 110, 0.70, false, false);
+	_move4 = new Move("Dig", "Ground", 80, 1, true, true);
     }
 
     public String toString(){
