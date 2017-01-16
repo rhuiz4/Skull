@@ -56,12 +56,12 @@ LESSONS LEARNED
 --------------------------------------------------------------
 Tim Wang :: Worked on todo.txt
 RiHui Zheng :: Worked on flowchart
-Jake Zaia :: 
+Jake Zaia ::
 
 2017-01-11
 --------------------------------------------------------------
 Tim Wang :: Created Pokemon abstract class and its abstract methods & instance variables.
-RiHui Zheng ::Began working on Woo.java
+RiHui Zheng :: Began working on Woo.java
 Jake Zaia :: Reformatted devlog, and test for planning. Began work on BattleUtils functionality, and layed groundwork for Pokemon.java
 
 
@@ -69,6 +69,12 @@ Jake Zaia :: Reformatted devlog, and test for planning. Began work on BattleUtil
 --------------------------------------------------------------
 Tim Wang :: Changed pokemon's methods to public instead of abstract. Created Pikachu. Fixed a bunch of typos and uploaded cs1 & keyboard.
 RiHui Zheng :: Finished Woo.java for MVP, fixed minor bugs everywhere, gave Pikachu 4 distinct moves.
-Jake Zaia :: Created class Move, finished BattleUtils, & fixed various formatting issues. 
+Jake Zaia :: Created class Move, finished BattleUtils, & fixed various formatting issues.
+
+
+2017-01-15
+--------------------------------------------------------------
+Rihui Zheng :: -Modified Woo.java: Intro, user name, keeps repeating until user asks it to end. Began working on game options (battle, exit, etc).
+      	       -Made new class Charizard.
 
 ==============================================================
