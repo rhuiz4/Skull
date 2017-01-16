@@ -70,6 +70,7 @@ public class Woo {
 		msg += "2) Venusaur\n";
 		msg += "3) Charizard\n";
 		msg += "4) Blastoise\n";
+		msg += "5) Random\n";
 		msg += "Enter you choice (as a number):";
 		System.out.println(msg);
 		Pokemon player = new Pikachu();
@@ -78,6 +79,8 @@ public class Woo {
 		    int pChoice = 0;
 		    validPoke = true;
 		    pChoice = Keyboard.readInt();
+		    if (pChoice == 5)
+			pChoice = (int) (Math.random() * 4 + 1);
 		    if (pChoice == 1)
 			player = new Pikachu();
 		    else if (pChoice == 2)
@@ -93,8 +96,17 @@ public class Woo {
 			
 		}
 		System.out.println(line);
-		
-		Pokemon opponent = new Venusaur();
+
+		Pokemon opponent = new Pikachu();
+		int oChoice = (int) (Math.random() * 4 + 1);
+		if (oChoice == 1)
+		    opponent = new Pikachu();
+		else if (oChoice == 2)
+		    opponent = new Venusaur();
+		else if (oChoice == 3)
+		    opponent = new Charizard();
+		else if (oChoice == 4)
+		    opponent = new Blastoise();
 
 		String oppName = opponent.getName();
 		String playName = player.getName();
