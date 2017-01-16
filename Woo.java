@@ -28,7 +28,7 @@ public class Woo {
 
         
 
-	System.out.println("Welcome, young trainer. Welcome to the World of Pokemon. May I ask you your name?");
+	System.out.println("Hello there, young trainer. Welcome to the World of Pokemon. May I ask you your name?");
 	try {
 	    pname = Keyboard.readString();
 	}
@@ -51,9 +51,7 @@ public class Woo {
 		    System.out.println("Input Invalid. Please enter the number corresponding to what you want to do above:");
 	    }
 
-	    if (mode == 1) {
-		Pokemon opponent = new Pikachu();
-		Pokemon player = new Pikachu();
+	    if (mode == 1) {	   
 		int oppHP = 0;
 		int playHP = 0;
 		int playerMove = 0;
@@ -62,12 +60,16 @@ public class Woo {
 		boolean playerFainted = false;
 		boolean opponentFainted = false;
 		boolean battleOver = false;
-		System.out.println("A wild Pikachu appeared!\nGo Pikachu");
+
+		Pokemon opponent = new Pikachu();
+		Pokemon player = new Charizard();
+		
+		System.out.println("A wild Pikachu appeared!\nGo Charizard");
 		while (!battleOver) {
 		    //displays HP
 		    oppHP = (int)((double)opponent.getCurrHP() / opponent.getMaxHP() * 100);
 		    playHP =(int)((double) player.getCurrHP() / player.getMaxHP() * 100);
-		    System.out.println("\n\nOpponent's Pikachu\nHP: " + oppHP + "%");
+		    System.out.println("\n\nOpponent's Charizard\nHP: " + oppHP + "%");
 		    System.out.println(opponent + "\n\n");
 		    
 		    System.out.println("\n\n" + pname + "'s Pikachu\nHP: " + playHP + "%");
