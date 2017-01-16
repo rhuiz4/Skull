@@ -61,10 +61,10 @@ public class Woo {
 		boolean opponentFainted = false;
 		boolean battleOver = false;
 
-		Pokemon opponent = new Pikachu();
-		Pokemon player = new Charizard();
+		Pokemon opponent = new Charizard();
+		Pokemon player = new Pikachu();
 		
-		System.out.println("A wild Pikachu appeared!\nGo Charizard");
+		System.out.println("A wild Charizard appeared!\nGo Charizard");
 		while (!battleOver) {
 		    //displays HP
 		    oppHP = (int)((double)opponent.getCurrHP() / opponent.getMaxHP() * 100);
@@ -98,7 +98,7 @@ public class Woo {
 		    if (opponent.getSpeed() > player.getSpeed()) {
 			opponentMove = (int)(Math.random() * 5);		
 			if (opponentMove == 1){
-			    System.out.println("The foe's Pikachu used " + opponent._move1 + "!");
+			    System.out.println("The foe's Charizard used " + opponent._move1 + "!");
 			    opponent.move1(player);
 			}
 			else if (opponentMove == 2){
