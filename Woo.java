@@ -4,6 +4,10 @@
 
 import cs1.Keyboard;
 public class Woo {
+    public static void print(String s){
+	System.out.print(s);
+    }
+
     
     public static void main(String[] arr) {
 	String line = "=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=";

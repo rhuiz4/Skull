@@ -175,13 +175,14 @@ public class BattleUtils{
 	    mod *= 1.5;
 	if (Math.random() * 16 < 1)
 	    mod *= 1.5;
-	effectiveness = computeEffectiveness(m._type, defender.getType1(), defender.getType2())
-	if (effectiveness > 1)
-	    System.out.println("It's super effective!");
-	else if (effectiveness == 0)
-	    System.out.println("But it had no effect...");
-	else if (effectiveness < 1)
-	    System.out.println("It's not very effective.");	    
+	float effectiveness = computeEffectiveness(m._type, defender.getType1(), defender.getType2());
+	System.out.println(effectiveness);
+	if (effectiveness > 1.0f)
+	    Woo.print("It's super effective!\n");
+	else if (effectiveness == 0.0f)
+	    Woo.println("But it had no effect...\n");
+	else if (effectiveness < 1.0f)
+	    Woo.print("It's not very effective.\n");	    
 	mod *= effectiveness;
 	return mod;	
     }
@@ -189,7 +190,7 @@ public class BattleUtils{
     public static int calcDamage(Pokemon attacker, Pokemon defender, Move m){
 	double mod = calcModifier(attacker, defender, m); //Finds the modifiers on the attack
 	if (Math.random() > m._acc){
-	    System.out.prinln("But it missed.");
+	    System.out.println("But it missed.");
 	    return 0;}
 	else {
 	    if (m._isPhysical)
