@@ -76,5 +76,7 @@ Jake Zaia :: Created class Move, finished BattleUtils, & fixed various formattin
 --------------------------------------------------------------
 Rihui Zheng :: -Modified Woo.java: Intro, user name, keeps repeating until user asks it to end. Began working on game options (battle, exit, etc).
       	       -Made new class Charizard.
+Jake Zaia :: Created class AI, reinforced BattleUtils usefullness, helped RiHui clean up readablility in Woo.
+
 
 ==============================================================
