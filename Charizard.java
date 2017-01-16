@@ -1,6 +1,8 @@
+
 public class Charizard extends Pokemon{
     
     public Charizard(){
+	_name = "Charizard";
 	_hp = (int)(Math.random() *48 + 138);
 	_spdef = (int)(Math.random() *70 + 81);
 	_spatk = (int)(Math.random() *76 + 102);

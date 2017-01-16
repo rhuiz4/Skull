@@ -1,6 +1,7 @@
 public class Pikachu extends Pokemon{
     
     public Pikachu(){
+	_name = "Pikachu";
 	_hp = (int)(Math.random() *48 + 95);
 	_spdef = (int)(Math.random() *64 + 49);
 	_spatk = (int)(Math.random() *64 + 49);

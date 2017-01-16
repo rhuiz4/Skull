@@ -1,7 +1,7 @@
 public class BattleUtils{
     public static float computeEffectiveness(String atktype, String deftype1, String deftype2){
 	float effectiveness = 1;
-	if (deftype2 == null)
+        if (deftype2 == null)
 	    deftype2 = "None";
 	if (atktype.equals("Electric"))
 	    {
@@ -176,13 +176,12 @@ public class BattleUtils{
 	if (Math.random() * 16 < 1)
 	    mod *= 1.5;
 	float effectiveness = computeEffectiveness(m._type, defender.getType1(), defender.getType2());
-        Woo.print(effectiveness);
 	if (effectiveness > 1.0f)
-	    Woo.print("It's super effective!\n");
+	    System.out.println("It's super effective!");
 	else if (effectiveness == 0.0f)
-	    Woo.println("But it had no effect...\n");
+	    System.out.println("But it had no effect...");
 	else if (effectiveness < 1.0f)
-	    Woo.print("It's not very effective.\n");	    
+	    System.out.println("It's not very effective.");	    
 	mod *= effectiveness;
 	return mod;	
     }
