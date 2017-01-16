@@ -60,9 +60,41 @@ public class Woo {
 		boolean playerFainted = false;
 		boolean opponentFainted = false;
 		boolean battleOver = false;
-
-		Pokemon opponent = new Charizard();
+		
+		
+		//user chooses their own Pokeman
+		System.out.println(line);
+		String msg = "";
+		msg = "So you want to battle. Lets see, which of these Pokemon do you want to be your partner?\n";
+		msg += "1) Pikachu\n";
+		msg += "2) Venusaur\n";
+		msg += "3) Charizard\n";
+		msg += "4) Blastoise\n";
+		msg += "Enter you choice (as a number):";
+		System.out.println(msg);
 		Pokemon player = new Pikachu();
+		boolean validPoke = false;
+		while (!validPoke) {
+		    int pChoice = 0;
+		    validPoke = true;
+		    pChoice = Keyboard.readInt();
+		    if (pChoice == 1)
+			player = new Pikachu();
+		    else if (pChoice == 2)
+			player = new Venusaur();
+		    else if (pChoice == 3)
+			player = new Charizard();
+		    else if (pChoice == 4)
+			player = new Blastoise();
+		    else {
+			validPoke = false;
+			System.out.println("Invalid Choice. Please select from the list above:");
+		    }
+			
+		}
+		System.out.println(line);
+		
+		Pokemon opponent = new Venusaur();
 
 		String oppName = opponent.getName();
 		String playName = player.getName();
@@ -159,7 +191,7 @@ public class Woo {
 			    player.move3(opponent);
 			}
 			else if (playerMove == 4){
-			    System.out.println(playName + "used " + player._move4 + "!");
+			    System.out.println(playName + " used " + player._move4 + "!");
 			    player.move4(opponent);
 			}
 			//if enemy is still alive
@@ -195,10 +227,10 @@ public class Woo {
 
 		//who wins?
 		if (playerFainted){
-		    System.out.println(playName + " fainted! You ran out of usable Pokemon! You lost $100,000! Oh Noooooooo!\n\n\n");
+		    System.out.println(playName + " fainted! You ran out of usable Pokemon! You lost $100,000! Oh Noooooooo!\n" + line);
 		}
 		else{
-		    System.out.println("The wild " + oppName + " fainted! You found $100,000! Boo Yea!\n\n\n");
+		    System.out.println("The wild " + oppName + " fainted! You found $100,000! Boo Yea!\n" + line);
 		}
 	    }//end mode 1
 
