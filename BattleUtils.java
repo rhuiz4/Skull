@@ -167,23 +167,58 @@ public class BattleUtils{
 	return effectiveness;
     }
 
+    //----------------------------------------REAL CALCULATIONS ----------------------------------------
+
     public static double calcModifier(Pokemon attacker, Pokemon defender, Move m){ //Doesn't account for held items/abilities
 	double mod = (.15 * Math.random() + .85);
 	if (m._type == attacker.getType1() || m._type == attacker.getType2())
 	    mod *= 1.5;
 	if (Math.random() * 16 < 1)
 	    mod *= 1.5;
-	mod *= computeEffectiveness(m._type, defender.getType1(), defender.getType2());
+	effectiveness = computeEffectiveness(m._type, defender.getType1(), defender.getType2())
+	if (effectiveness > 1)
+	    System.out.println("It's super effective!");
+	else if (effectiveness == 0)
+	    System.out.println("But it had no effect...");
+	else if (effectiveness < 1)
+	    System.out.println("It's not very effective.");	    
+	mod *= effectiveness;
 	return mod;	
     }
 
     public static int calcDamage(Pokemon attacker, Pokemon defender, Move m){
-	double mod = calcModifier(attacker, defender, m);
-
-	//assumes Pokemon level is always 50
-	if (m._isPhysical)
-	    return (int) (mod * (.44 * attacker.getAtk() / defender.getDef() * m._basePow + 2));
-	else
-	    return (int) (mod * (.44 * attacker.getSpAtk() / defender.getSpDef() * m._basePow + 2));
+	double mod = calcModifier(attacker, defender, m); //Finds the modifiers on the attack
+	if (Math.random() > m._acc){
+	    System.out.prinln("But it missed.");
+	    return 0;}
+	else {
+	    if (m._isPhysical)
+		return (int) (mod * (.44 * attacker.getAtk() / defender.getDef() * m._basePow + 2));
+	    else
+		return (int) (mod * (.44 * attacker.getSpAtk() / defender.getSpDef() * m._basePow + 2));
+	}
     }
+
+
+
+
+
+    //-----------------------------CALCULATIONS FOR AI DECISIONS--------------------------------------
+    public static double calcModifierAI(Pokemon attacker, Pokemon defender, Move m){ //Doesn't account for held items/abilities
+	double mod = 1;
+	if (m._type == attacker.getType1() || m._type == attacker.getType2())
+	    mod *= 1.5;
+	mod *= computeEffectiveness(m._type, defender.getType1(), defender.getType2());
+	return mod;	
+    }
+    
+    public static int calcDamageAI(Pokemon attacker, Pokemon defender, Move m){
+	double mod = calcModifierAI(attacker, defender, m);
+	if (m._isPhysical)
+	    return (int) (mod * (.44 * attacker.getAtk() * m._basePow + 2));
+	else
+	    return (int) (mod * (.44 * attacker.getSpAtk() * m._basePow + 2));
+    }
+
 }
+
