@@ -4,11 +4,11 @@ public class Charizard extends Pokemon{
     public Charizard(){
 	_name = "Charizard";
 	_hp = (int)(Math.random() *48 + 138);
-	_spdef = (int)(Math.random() *70 + 81);
-	_spatk = (int)(Math.random() *76 + 102);
-	_speed = (int)(Math.random() *70 + 81);
 	_atk = (int)(Math.random() *70 + 80);
 	_def = (int)(Math.random() *70 + 74);
+	_spatk = (int)(Math.random() *76 + 102);
+	_spdef = (int)(Math.random() *70 + 81);
+	_speed = (int)(Math.random() *70 + 81);
 	_currhp = _hp;
 	_type1 = "Fire";
 	_type2 = "Flying";
