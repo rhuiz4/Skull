@@ -79,4 +79,7 @@ Rihui Zheng :: -Modified Woo.java: Intro, user name, keeps repeating until user 
 Jake Zaia :: Created class AI, reinforced BattleUtils usefullness, helped RiHui clean up readablility in Woo.
 
 
+2017-01-16
+--------------------------------------------------------------
+Tim Wang :: Started reformatting Woo and implementing 3-pokemon battle.
 ==============================================================
