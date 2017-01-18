@@ -82,4 +82,9 @@ Jake Zaia :: Created class AI, reinforced BattleUtils usefullness, helped RiHui 
 2017-01-16
 --------------------------------------------------------------
 Tim Wang :: Started reformatting Woo and implementing 3-pokemon battle.
+
+2017-01-17
+--------------------------------------------------------------
+Tim Wang :: -Finished updating Woo. Now players can start with 6 pokemons.
+	    -Made Pokemon not an abstract class
 ==============================================================
