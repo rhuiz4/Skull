@@ -187,11 +187,11 @@ public class BattleUtils{
     }
 
     public static int calcDamage(Pokemon attacker, Pokemon defender, Move m){
-	double mod = calcModifier(attacker, defender, m); //Finds the modifiers on the attack
 	if (Math.random() > m._acc){
 	    System.out.println("But it missed.");
 	    return 0;}
 	else {
+	    double mod = calcModifier(attacker, defender, m); //Finds the modifiers on the attack
 	    if (m._isPhysical)
 		return (int) (mod * (.44 * attacker.getAtk() / defender.getDef() * m._basePow + 2));
 	    else
