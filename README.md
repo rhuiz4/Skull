@@ -1,10 +1,10 @@
-# Skull
+## Skull
 
 
-== Description
+# Description
    This project is a terminal based pokemon battle simulator. Users will be able to choose one of several pokemon, and battle against an AI, in battles taht have a set number of pokemon.
 
-== Instructions
+# Instructions
 
    1) $ javac Woo.java
    2) $ java Woo
