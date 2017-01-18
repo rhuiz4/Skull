@@ -133,13 +133,13 @@ public class Woo {
 		//displays HP
 		oppHP = (int)((double)opponent.getCurrHP() / opponent.getMaxHP() * 100);
 		playHP =(int)((double) player.getCurrHP() / player.getMaxHP() * 100);
-		System.out.println("\n\n" + line + "\n" + "Opponent's " + oppName + "\nHP: " + oppHP + "%\n" + line);
+		System.out.println(line + "\n" + "Opponent's " + oppName + " HP: " + oppHP + "%\n" + line);
 		System.out.println(opponent);
 		
-		System.out.println("\n\n" + line + "\n" + pname + "'s " + playName + "\nHP: " + playHP + "%\n" + line);
+		System.out.println("\n" + line + "\n" + pname + "'s " + playName + " HP: " + playHP + "%\n" + line);
 		
 		//displays moves
-		System.out.println("\n\n\n" + line + "\nWhat will " + playName + " do?\nPlease enter the number corresponding to the move you want to use:\n1) " + player._move1 + "\t2) " + player._move2 + "\n3) " + player._move3 + "\t4) " + player._move4);
+		System.out.println("\nWhat will " + playName + " do?\nPlease enter the number corresponding to the move you want to use:\n1) " + player._move1 + "\t2) " + player._move2 + "\t3) " + player._move3 + "\t4) " + player._move4);
 		
 		//keeps on asking the user to put in integer until they input a valid input
 		validMove = false;
@@ -253,7 +253,7 @@ public class Woo {
 			Counter++;
 		    }
 		}
-		System.out.println(line);
+		//System.out.println(line);
 	        if (playerFainted == true && Counter < 6){
 		    System.out.println("You just lost your " + playName + "! But don't worry because you have more pokemons at hand!");
 		    player = yourPokemon.get(Counter);
