@@ -24,7 +24,7 @@ public class Woo {
 	    else{
 		toPrint += s2.substring(0, s2.indexOf("\n")) + "\n";
 		s2 = s2.substring(s2.indexOf("\n") + 1);}
-	    System.out.println(toPrint);
+	    System.out.print(toPrint);
 	    toPrint = "";
 	}
     }
