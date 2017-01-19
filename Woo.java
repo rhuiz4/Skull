@@ -32,9 +32,6 @@ public class Woo {
 
     private String line = "=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=";
     private String pname = "";
-    public Woo(){
-	
-    }
 
     public void newgame(){
 
@@ -142,7 +139,8 @@ System.out.println("So you want to battle. Lets see, which Pokemon do you want t
 	    oppHP = (int)((double)opponent.getCurrHP() / opponent.getMaxHP() * 100);
 	    playHP =(int)((double) player.getCurrHP() / player.getMaxHP() * 100);
 	    System.out.println(line + "\n" + "Opponent's " + oppName + " HP: " + oppHP + "%\n" + line);
-	    System.out.println(opponent);
+	    //HERE
+	    printPokemon(opponent,player);
 		
 	    System.out.println("\n" + line + "\n" + pname + "'s " + playName + " HP: " + playHP + "%\n" + line);
 		
