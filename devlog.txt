@@ -87,4 +87,8 @@ Tim Wang :: Started reformatting Woo and implementing 3-pokemon battle.
 --------------------------------------------------------------
 Tim Wang :: -Finished updating Woo. Now players can start with 6 pokemons.
 	    -Made Pokemon not an abstract class
+
+2017-01-18
+--------------------------------------------------------------
+Tim Wang :: -Updated Woo. Added back first-player feature and added 6v6 battle mode.
 ==============================================================
