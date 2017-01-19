@@ -91,4 +91,9 @@ Tim Wang :: -Finished updating Woo. Now players can start with 6 pokemons.
 2017-01-18
 --------------------------------------------------------------
 Tim Wang :: -Updated Woo. Added back first-player feature and added 6v6 battle mode.
+
+2017-01-19
+-------------------------------------------------------------
+Tim Wang :: Added Gengar, Dragonite & Lapras.
+
 ==============================================================
