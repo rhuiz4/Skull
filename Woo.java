@@ -6,7 +6,6 @@ import cs1.Keyboard;
 import java.util.ArrayList;
 public class Woo {
 
-
     private static void printPokemon(Pokemon p1, Pokemon p2){
 	String s1 = p1.toString();
 	String s2 = p2.toString();
@@ -175,7 +174,7 @@ public class Woo {
 	    oppHP = (int)(Math.round((double)opponent.getCurrHP() / opponent.getMaxHP() * 100));
 	    playHP =(int)(Math.round((double) player.getCurrHP() / player.getMaxHP() * 100));
 	    System.out.println(line + "\n" + "Opponent's " + oppName + " HP: " + oppHP + "%\n" + line);
-	    System.out.println(opponent);
+	    printPokemon(opponent, player);
 		
 	    System.out.println("\n" + line + "\n" + pname + "'s " + playName + " HP: " + playHP + "%\n" + line);
 		
@@ -450,7 +449,7 @@ public class Woo {
 	    oppHP = (int)((double)opponent.getCurrHP() / opponent.getMaxHP() * 100);
 	    playHP =(int)((double) player.getCurrHP() / player.getMaxHP() * 100);
 	    System.out.println(line + "\n" + "Opponent's " + oppName + " HP: " + oppHP + "%\n" + line);
-	    System.out.println(opponent);
+	    printPokemon(opponent, player);
 		
 	    System.out.println("\n" + line + "\n" + pname + "'s " + playName + " HP: " + playHP + "%\n" + line);
 		
