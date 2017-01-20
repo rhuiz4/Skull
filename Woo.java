@@ -89,7 +89,7 @@ public class Woo {
 	//user chooses their own Pokemen
 	System.out.println(line);
 	System.out.println("So you want to battle. Lets see, which of these Pokemons do you want to be your partners?\n");
-	for (int x = 1; x < 7; x++){
+	for (int x = 1; x < 8; x++){
 	    Pokemon saved;
 
 	    String msg = "";
@@ -101,7 +101,8 @@ public class Woo {
 	    msg += "5) Mewtwo\n";
 	    msg += "6) Lapras\n";
 	    msg += "7) Gengar\n";
-	    msg += "8) Random\n";
+	    msg += "8) Snorlax\n";
+	    msg += "9) Random\n";
 	    msg += "Enter you choice (as a number):";
 	    System.out.println(msg);
 
