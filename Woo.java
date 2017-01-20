@@ -49,7 +49,7 @@ public class Woo {
 	System.out.println("      MMMX   ^MMMM^  MM       ~%:           !Mh.    dMI IMMP         ");
 	System.out.println("      ^MMM.                                             IMX          ");
 	System.out.println("       ~M!M                                             IMP          ");
-	System.out.println("\n\n\nA game by Jake Zaia, Rihui Zheng, and Tim Wang. Enjoy.\n\n" + line + "\n\n");
+	System.out.println("\n\n\nA game by Jake Zaia, Rihui Zheng, and Tim Wang. Enjoy.\n-Pokemon sprites by git user vsoch\n" + line + "\n\n");
 
         
 
@@ -96,15 +96,17 @@ public class Woo {
 	    msg += "3) Charizard\n";
 	    msg += "4) Blastoise\n";
 	    msg += "5) Mewtwo\n";
-	    msg += "6) Random\n";
+	    msg += "6) Lapras\n";
+	    msg += "7) Gengar\n";
+	    msg += "8) Random\n";
 	    msg += "Enter you choice (as a number):";
 	    System.out.println(msg);
 
 	    int pChoice = 0;
 	    while (pChoice == 0) {
 		pChoice = Keyboard.readInt();
-		if (pChoice == 5){
-		    pChoice = (int) (Math.random() * 4 + 1);
+		if (pChoice == 7){
+		    pChoice = (int) (Math.random() * 6 + 1);
 		}
 		if (pChoice == 1){
 		    saved = new Pikachu();
@@ -126,6 +128,10 @@ public class Woo {
 		    saved = new Mewtwo();
 		    yourPokemon.add(saved);
 		}
+		else if (pChoice == 6){
+		    saved = new Lapras();
+		    yourPokemon.add(saved);
+		}
 		else {
 		    System.out.println("Invalid Choice. Please select from the list above:");
 		    pChoice = 0;
@@ -142,7 +148,7 @@ public class Woo {
 	String playName = player.getName();
 	System.out.println("Go " + playName);
 	Pokemon opponent = new Pokemon();
-	int oChoice = (int) (Math.random() * 4 + 1);
+	int oChoice = (int) (Math.random() * 6 + 1);
 	if (oChoice == 1)
 	    opponent = new Pikachu();
 	else if (oChoice == 2)
@@ -153,6 +159,8 @@ public class Woo {
 	    opponent = new Blastoise();
 	else if (oChoice == 5)
 	    opponent = new Mewtwo();
+	else if (oChoice == 6)
+	    opponent = new Lapras();
 	
 	String oppName = opponent.getName();
 	
@@ -306,6 +314,8 @@ public class Woo {
 			opponent = new Blastoise();
 		    else if (oChoice == 5)
 			opponent = new Mewtwo();
+		    else if (oChoice == 6)
+			opponent = new Lapras();
 		    
 		    
 		    oppName = opponent.getName();
@@ -345,15 +355,16 @@ public class Woo {
 	    msg += "3) Charizard\n";
 	    msg += "4) Blastoise\n";
 	    msg += "5) Mewtwo\n";
-	    msg += "6) Random\n";
+	    msg += "6) Lapras\n";
+	    msg += "7) Random\n";
 	    msg += "Enter you choice (as a number):";
 	    System.out.println(msg);
 
 	    int pChoice = 0;
 	    while (pChoice == 0) {
 		pChoice = Keyboard.readInt();
-		if (pChoice == 6){
-		    pChoice = (int) (Math.random() * 5 + 1);
+		if (pChoice == 7){
+		    pChoice = (int) (Math.random() * 7 + 1);
 		}
 		if (pChoice == 1){
 		    saved = new Pikachu();
@@ -375,6 +386,10 @@ public class Woo {
 		    saved = new Mewtwo();
 		    yourPokemon.add(saved);
 		}
+		else if (pChoice == 6){
+		    saved = new Lapras();
+		    yourPokemon.add(saved);
+		}
 		else {
 		    System.out.println("Invalid Choice. Please select from the list above:");
 		    pChoice = 0;
@@ -394,7 +409,7 @@ public class Woo {
 	ArrayList<Pokemon> oppoPokemon = new ArrayList<Pokemon>(); 
 	for (int x = 0; x<6; x++){
 	    Pokemon opposaved;
-	    int oChoice = (int) (Math.random() * 4 + 1);
+	    int oChoice = (int) (Math.random() * 6 + 1);
 	    if (oChoice == 1){
 		opposaved = new Pikachu();
 		oppoPokemon.add(opposaved);
@@ -413,6 +428,10 @@ public class Woo {
 	    }
 	    else if (oChoice == 5){
 		opposaved = new Mewtwo();
+		oppoPokemon.add(opposaved);
+	    }
+	    else if (oChoice == 6){
+		opposaved = new Lapras();
 		oppoPokemon.add(opposaved);
 	    }
 	}
@@ -602,15 +621,23 @@ public class Woo {
 	    }
 
 	    if (mode == 1){
-		game.BattleTrainer(1);
+		System.out.println("What type of battle do you want to play?\n1) 1 vs 1\n2) 2 vs 2\n3) 3 vs 3\n4) 4 vs 4\n5) 5 vs 5\n 6) 6 vs 6");
+		mode = 0;
+		while (mode == 0){
+		    try{
+			mode = Keyboard.readInt();
+		    }
+		    catch( Exception e){
+			System.out.println("Please choose a valid mode");
+		    }
+		}
+		game.BattleTrainer(mode);
+		mode = 0;
 	    }
 	    if (mode == 2){
 		game.playSurvival();
 	    }
-	    if (mode == 3){
-		game.BattleTrainer(6);
-	    }
-	    if (mode == 4) {
+	    if (mode == 3) {
 		System.out.println("Have a nice day, " + game.getpName() + ".");
 		exit = true;
 	    }
