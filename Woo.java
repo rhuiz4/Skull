@@ -32,7 +32,10 @@ public class Woo {
 
     private String line = "=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=";
     private String pname = "";
-
+    private int numKills = 0;
+    private int numWin = 0;
+    private int numPlay = 0;
+    
     public void newgame(){
 
 	System.out.println(line + "\n\n\n");
@@ -168,8 +171,8 @@ public class Woo {
 	System.out.println("A wild " + oppName + " appeared!\n" );
 	while (numAlive != 0){
 	    //displays HP
-	    oppHP = (int)((double)opponent.getCurrHP() / opponent.getMaxHP() * 100);
-	    playHP =(int)((double) player.getCurrHP() / player.getMaxHP() * 100);
+	    oppHP = (int)(Math.round((double)opponent.getCurrHP() / opponent.getMaxHP() * 100));
+	    playHP =(int)(Math.round((double) player.getCurrHP() / player.getMaxHP() * 100));
 	    System.out.println(line + "\n" + "Opponent's " + oppName + " HP: " + oppHP + "%\n" + line);
 	    System.out.println(opponent);
 		
@@ -303,7 +306,7 @@ public class Woo {
 		    System.out.println("You killed the wild " + oppName + "!");
 		    kills++;
 		    opponent = new Pokemon();
-		    oChoice = (int) (Math.random() * 4 + 1);
+		    oChoice = (int) (Math.random() * 6 + 1);
 		    if (oChoice == 1)
 			opponent = new Pikachu();
 		    else if (oChoice == 2)
@@ -326,6 +329,7 @@ public class Woo {
 		
 	//who wins?
 	System.out.println("Game Over. You have killed a total of " + kills + " Pokemon.");
+        numKills+=kills;
     
     }//end playgame()
 
@@ -581,6 +585,7 @@ public class Woo {
 	    }
 	    if (opponentFainted == true && CounterOppo < numPokes){
 		System.out.println("The foe's " + oppName + " fainted!");
+		numWin++;
 		opponent = oppoPokemon.get(CounterOppo);
 		oppName = opponent.getName();
 		opponentFainted = false;
@@ -601,6 +606,25 @@ public class Woo {
     public String getpName(){
 	return pname;
     }
+
+    public void setPlay(int play){
+	numPlay+=play;
+    }
+    public void setWin(int win){
+	numWin+=win;
+    }
+    public void setKills(int killing){
+	numKills+=killing;
+    }
+    public int getPlay(){
+	return numPlay;
+    }
+    public int getWin(){
+	return numWin;
+    }
+    public int getKill(){
+	return numKills;
+    }
 	    
     public static void main(String[] arr) {
 	boolean exit = false;
@@ -608,7 +632,7 @@ public class Woo {
 	game.newgame();
 	while (exit == false){
 	    
-	    System.out.println("\n\nHello again, " + game.getpName() + ". What would you like to do? \n 1.Battle\n 2.Exit\nPlease enter the number corresponding to your choice:");
+	    System.out.println("\n\nHello again, " + game.getpName() + ". What would you like to do? \n 1.Battle\n 2.Your Stats\n 3.Exit\nPlease enter the number corresponding to your choice:");
 	    int mode = 0;
 		
 	    while (mode == 0){
@@ -618,13 +642,14 @@ public class Woo {
 		catch( Exception e){
 		    System.out.println("Input Invalid. Please enter the number corresponding to what you want to do above:");
 		}
-		if (!(mode > 0 && mode < 3)) {
+		if (!(mode > 0 && mode < 4)) {
 			System.out.println("Please choose a valid mode.");
 			mode = 0;
 		    }
 	    }
 
 	    if (mode == 1){
+		game.setPlay(1);
 		System.out.println("What type of battle do you want to play?\n 1) 1 vs 1\n 2) 2 vs 2\n 3) 3 vs 3\n 4) 4 vs 4\n 5) 5 vs 5\n 6) 6 vs 6\n 7) Survival Mode");
 		mode = 0;
 		while (mode == 0){
@@ -648,8 +673,13 @@ public class Woo {
 	    
 		else
 		    System.out.println("Choose a valid mode");
-		    }
-	    if (mode == 2) {
+	    }
+	    if (mode == 2){
+		System.out.println("Your participated in " + game.getPlay() + " battles.");
+		System.out.println("You won " + game.getWin() + " times.");
+		System.out.println("In survival mode, you killed a total of " + game.getKill() + " Pokemons.");
+	    }
+	    if (mode == 3) {
 		System.out.println("Have a nice day, " + game.getpName() + ".");
 		exit = true;
 	    }
