@@ -580,7 +580,7 @@ public class Woo {
 		System.out.println("You have " + yournumAlive + " Pokemon remaining.");
 	    }
 	    if (opponentFainted == true && CounterOppo < numPokes){
-		System.out.println("You killed the wild " + oppName + "!");
+		System.out.println("The foe's " + oppName + " fainted!");
 		opponent = oppoPokemon.get(CounterOppo);
 		oppName = opponent.getName();
 		opponentFainted = false;
@@ -591,10 +591,10 @@ public class Woo {
 		
 	//who wins?
 	if (yournumAlive == 0){
-	    System.out.println("You ran out of Pokemon! You payed $1,000,000 to the winner! You blacked out!");
+	    System.out.println("Your " + playName + "fainted!\nYou ran out of Pokemon! You payed $1,000,000 to the winner! You blacked out!");
 	}
 	else if (oppnumAlive == 0){
-	    System.out.println("Youngster Joey: You got lucky this time!\n You got $1,000,000 for winning");
+	    System.out.println("The foe's " + oppName + " fainted!\nYou defeated Youngster Joey!\nYoungster Joey: You got lucky this time!\n You got $1,000,000 for winning");
 	}
     }//end playgame()
 
@@ -608,7 +608,7 @@ public class Woo {
 	game.newgame();
 	while (exit == false){
 	    
-	    System.out.println("\n\nHello again, " + game.getpName() + ". What would you like to do? \n 1.Single Player Battle\n 2.Surival Mode\n 3.6v6 Battle\n 4.Exit\nPlease enter the number corresponding to your choice:");
+	    System.out.println("\n\nHello again, " + game.getpName() + ". What would you like to do? \n 1.Single Player Battle\n 2.Exit\nPlease enter the number corresponding to your choice:");
 	    int mode = 0;
 		
 	    while (mode == 0){
@@ -621,7 +621,7 @@ public class Woo {
 	    }
 
 	    if (mode == 1){
-		System.out.println("What type of battle do you want to play?\n1) 1 vs 1\n2) 2 vs 2\n3) 3 vs 3\n4) 4 vs 4\n5) 5 vs 5\n 6) 6 vs 6");
+		System.out.println("What type of battle do you want to play?\n 1) 1 vs 1\n 2) 2 vs 2\n 3) 3 vs 3\n 4) 4 vs 4\n 5) 5 vs 5\n 6) 6 vs 6\n 7) Survival Mode");
 		mode = 0;
 		while (mode == 0){
 		    try{
@@ -631,13 +631,14 @@ public class Woo {
 			System.out.println("Please choose a valid mode");
 		    }
 		}
-		game.BattleTrainer(mode);
-		mode = 0;
+		if (mode == 7)
+		    game.playSurvival();
+		else {
+		    game.BattleTrainer(mode);
+		    mode = 0;
+		}
 	    }
-	    if (mode == 2){
-		game.playSurvival();
-	    }
-	    if (mode == 3) {
+	    if (mode == 2) {
 		System.out.println("Have a nice day, " + game.getpName() + ".");
 		exit = true;
 	    }
