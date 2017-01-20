@@ -16,7 +16,8 @@ Flesh out each category whenever necessary, appropriate.
 ------------------------------------------
 OBSTACLES OVERCOME
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
+-Implementing BattleUtils would take hours of work if we encoded it from scratch. But Jake decided to old Netlogo code to java, saving us lots of time from redundatn coding. 
+-Implementing multi-pokemon battle also took lots of work. We were unsure about how to store these pokemons. Tim decided to import ArrayList to store them. 
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 UNRESOLVED ISSUES
@@ -75,7 +76,7 @@ Jake Zaia :: Created class Move, finished BattleUtils, & fixed various formattin
 2017-01-15
 --------------------------------------------------------------
 Rihui Zheng :: -Modified Woo.java: Intro, user name, keeps repeating until user asks it to end. Began working on game options (battle, exit, etc).
-      	       -Made new class Charizard, Blastoise and Venusaur.
+      	       -Made new class Charizard.
 Jake Zaia :: Created class AI, reinforced BattleUtils usefullness, helped RiHui clean up readablility in Woo.
 
 
@@ -86,18 +87,14 @@ Tim Wang :: Started reformatting Woo and implementing 3-pokemon battle.
 2017-01-17
 --------------------------------------------------------------
 Tim Wang :: -Finished updating Woo. Now players can start with 6 pokemons.
-	    -Made Pokemon not an abstract class.
-Rihui Zheng :: Made class Mewtwo.
+	    -Made Pokemon not an abstract class
 
 2017-01-18
 --------------------------------------------------------------
 Tim Wang :: -Updated Woo. Added back first-player feature and added 6v6 battle mode.
-Jake Zaia :: -Upgraded the ASCII art into ANSI art.
-     	     -Made the art of each Pokemon the same size.
-	     -The art for both sides are shown.
 
 2017-01-19
 -------------------------------------------------------------
 Tim Wang :: Added Gengar, Dragonite & Lapras.
-Rihui Zheng :: Modified Woo.java so the code for battling is much more efficient.
+
 ==============================================================
