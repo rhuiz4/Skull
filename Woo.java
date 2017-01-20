@@ -171,8 +171,8 @@ public class Woo {
 	System.out.println("A wild " + oppName + " appeared!\n" );
 	while (numAlive != 0){
 	    //displays HP
-	    oppHP = (int)((double)opponent.getCurrHP() / opponent.getMaxHP() * 100);
-	    playHP =(int)((double) player.getCurrHP() / player.getMaxHP() * 100);
+	    oppHP = (int)(Math.round((double)opponent.getCurrHP() / opponent.getMaxHP() * 100));
+	    playHP =(int)(Math.round((double) player.getCurrHP() / player.getMaxHP() * 100));
 	    System.out.println(line + "\n" + "Opponent's " + oppName + " HP: " + oppHP + "%\n" + line);
 	    System.out.println(opponent);
 		
@@ -306,7 +306,7 @@ public class Woo {
 		    System.out.println("You killed the wild " + oppName + "!");
 		    kills++;
 		    opponent = new Pokemon();
-		    oChoice = (int) (Math.random() * 4 + 1);
+		    oChoice = (int) (Math.random() * 6 + 1);
 		    if (oChoice == 1)
 			opponent = new Pikachu();
 		    else if (oChoice == 2)
