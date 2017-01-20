@@ -618,6 +618,10 @@ public class Woo {
 		catch( Exception e){
 		    System.out.println("Input Invalid. Please enter the number corresponding to what you want to do above:");
 		}
+		if (!(mode > 0 && mode < 3)) {
+			System.out.println("Please choose a valid mode.");
+			mode = 0;
+		    }
 	    }
 
 	    if (mode == 1){
@@ -628,16 +632,23 @@ public class Woo {
 			mode = Keyboard.readInt();
 		    }
 		    catch( Exception e){
-			System.out.println("Please choose a valid mode");
+			System.out.println("Please choose a valid mode.");
+		    }
+		    if (!(mode > 0 && mode < 8)) {
+			System.out.println("Please choose a valid mode.");
+			mode = 0;
 		    }
 		}
 		if (mode == 7)
 		    game.playSurvival();
-		else {
+		else if(mode < 7 && mode > 0) {
 		    game.BattleTrainer(mode);
 		    mode = 0;
 		}
-	    }
+	    
+		else
+		    System.out.println("Choose a valid mode");
+		    }
 	    if (mode == 2) {
 		System.out.println("Have a nice day, " + game.getpName() + ".");
 		exit = true;
