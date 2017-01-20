@@ -591,7 +591,7 @@ public class Woo {
 		
 	//who wins?
 	if (yournumAlive == 0){
-	    System.out.println("Your " + playName + "fainted!\nYou ran out of Pokemon! You payed $1,000,000 to the winner! You blacked out!");
+	    System.out.println("Your " + playName + "fainted!\nYou ran out of Pokemon! You paid $1,000,000 to the winner! You blacked out!");
 	}
 	else if (oppnumAlive == 0){
 	    System.out.println("The foe's " + oppName + " fainted!\nYou defeated Youngster Joey!\nYoungster Joey: You got lucky this time!\n You got $1,000,000 for winning");
@@ -608,7 +608,7 @@ public class Woo {
 	game.newgame();
 	while (exit == false){
 	    
-	    System.out.println("\n\nHello again, " + game.getpName() + ". What would you like to do? \n 1.Single Player Battle\n 2.Exit\nPlease enter the number corresponding to your choice:");
+	    System.out.println("\n\nHello again, " + game.getpName() + ". What would you like to do? \n 1.Battle\n 2.Exit\nPlease enter the number corresponding to your choice:");
 	    int mode = 0;
 		
 	    while (mode == 0){
