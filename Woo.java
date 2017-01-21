@@ -585,7 +585,6 @@ public class Woo {
 	    }
 	    if (opponentFainted == true && CounterOppo < numPokes){
 		System.out.println("The foe's " + oppName + " fainted!");
-		numWin++;
 		opponent = oppoPokemon.get(CounterOppo);
 		oppName = opponent.getName();
 		opponentFainted = false;
@@ -600,6 +599,7 @@ public class Woo {
 	}
 	else if (oppnumAlive == 0){
 	    System.out.println("The foe's " + oppName + " fainted!\nYou defeated Youngster Joey!\nYoungster Joey: You got lucky this time!\n You got $1,000,000 for winning");
+	    numWin++;
 	}
     }//end playgame()
 
@@ -609,12 +609,6 @@ public class Woo {
 
     public void setPlay(int play){
 	numPlay+=play;
-    }
-    public void setWin(int win){
-	numWin+=win;
-    }
-    public void setKills(int killing){
-	numKills+=killing;
     }
     public int getPlay(){
 	return numPlay;
