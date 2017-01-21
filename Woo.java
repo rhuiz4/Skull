@@ -51,7 +51,7 @@ public class Woo {
 	System.out.println("      MMMX   ^MMMM^  MM       ~%:           !Mh.    dMI IMMP         ");
 	System.out.println("      ^MMM.                                             IMX          ");
 	System.out.println("       ~M!M                                             IMP          ");
-	System.out.println("\n\n\nA game by Jake Zaia, Rihui Zheng, and Tim Wang. Enjoy.\n-Pokemon sprites by git user vsoch\n" + line + "\n\n");
+	System.out.println("\n\n\nA game by Jake Zaia, Rihui Zheng, and Tim Wang. Enjoy.\n--Pokemon sprites by git user vsoch\n" + line + "\n\n");
 
         
 
@@ -68,8 +68,6 @@ public class Woo {
 	System.out.println(line);
     }
 
-	   
- 
 	
 	
     public void playSurvival(){
@@ -84,7 +82,21 @@ public class Woo {
 	boolean playerFainted = false;
 	boolean opponentFainted = false;
 	ArrayList<Pokemon> yourPokemon = new ArrayList<Pokemon>();
-			
+
+	String choices = "";
+	choices += "1) Pikachu\n";
+	choices += "2) Venusaur\n";
+	choices += "3) Charizard\n";
+	choices += "4) Blastoise\n";
+	choices += "5) Mewtwo\n";
+	choices += "6) Lapras\n";
+	choices += "7) Gengar\n";
+	choices += "8) Snorlax\n";
+	choices += "9) Dragonite\n";
+	choices += "10) Scyther\n";
+	choices += "11) Random\n";
+	choices += "Enter you choice (as a number):";
+
 	//user chooses their own Pokemen
 	System.out.println(line);
 	System.out.println("So you want to battle. Lets see, which of these Pokemons do you want to be your partners?\n");
@@ -92,24 +104,16 @@ public class Woo {
 	    Pokemon saved;
 
 	    String msg = "";
-	    msg += "Choice " + x + "\n";
-	    msg += "1) Pikachu\n";
-	    msg += "2) Venusaur\n";
-	    msg += "3) Charizard\n";
-	    msg += "4) Blastoise\n";
-	    msg += "5) Mewtwo\n";
-	    msg += "6) Lapras\n";
-	    msg += "7) Gengar\n";
-	    msg += "8) Snorlax\n";
-	    msg += "9) Random\n";
-	    msg += "Enter you choice (as a number):";
+	    msg = "Choice " + x + "\n";
+	    msg += choices;
+
 	    System.out.println(msg);
 
 	    int pChoice = 0;
 	    while (pChoice == 0) {
 		pChoice = Keyboard.readInt();
-		if (pChoice == 7){
-		    pChoice = (int) (Math.random() * 6 + 1);
+		if (pChoice == 11){
+		    pChoice = (int) (Math.random() * 10 + 1);
 		}
 		if (pChoice == 1){
 		    saved = new Pikachu();
@@ -135,6 +139,23 @@ public class Woo {
 		    saved = new Lapras();
 		    yourPokemon.add(saved);
 		}
+		else if (pChoice == 7){
+		    saved = new Gengar();
+		    yourPokemon.add(saved);
+		}
+		else if (pChoice == 8){
+		    saved = new Snorlax();
+		    yourPokemon.add(saved);
+		}
+		else if (pChoice == 9){
+		    saved = new Scyther();
+		    yourPokemon.add(saved);
+		}
+		else if (pChoice == 10){
+		    saved = new Dragonite();
+		    yourPokemon.add(saved);
+		}
+
 		else {
 		    System.out.println("Invalid Choice. Please select from the list above:");
 		    pChoice = 0;
@@ -321,6 +342,7 @@ public class Woo {
 			opponent = new Lapras();
 		    
 		    
+		    
 		    oppName = opponent.getName();
 		    opponentFainted = false;
 		    System.out.println("A wild " + oppName + " appeared!\n" );
@@ -345,6 +367,20 @@ public class Woo {
 	boolean playerFainted = false;
 	boolean opponentFainted = false;
 	ArrayList<Pokemon> yourPokemon = new ArrayList<Pokemon>();
+
+	String choices = "";
+	choices += "1) Pikachu\n";
+	choices += "2) Venusaur\n";
+	choices += "3) Charizard\n";
+	choices += "4) Blastoise\n";
+	choices += "5) Mewtwo\n";
+	choices += "6) Lapras\n";
+	choices += "7) Gengar\n";
+	choices += "8) Snorlax\n";
+	choices += "9) Dragonite\n";
+	choices += "10) Scyther\n";
+	choices += "11) Random\n";
+	choices += "Enter you choice (as a number):";
 			
 	//user chooses their own Pokemen
 	System.out.println(line);
@@ -354,21 +390,14 @@ public class Woo {
 
 	    String msg = "";
 	    msg += "Choice " + x + "\n";
-	    msg += "1) Pikachu\n";
-	    msg += "2) Venusaur\n";
-	    msg += "3) Charizard\n";
-	    msg += "4) Blastoise\n";
-	    msg += "5) Mewtwo\n";
-	    msg += "6) Lapras\n";
-	    msg += "7) Random\n";
-	    msg += "Enter you choice (as a number):";
+	    msg += choices;
 	    System.out.println(msg);
 
 	    int pChoice = 0;
 	    while (pChoice == 0) {
 		pChoice = Keyboard.readInt();
-		if (pChoice == 7){
-		    pChoice = (int) (Math.random() * 7 + 1);
+		if (pChoice == 11){
+		    pChoice = (int) (Math.random() * 10 + 1);
 		}
 		if (pChoice == 1){
 		    saved = new Pikachu();
@@ -392,6 +421,22 @@ public class Woo {
 		}
 		else if (pChoice == 6){
 		    saved = new Lapras();
+		    yourPokemon.add(saved);
+		}
+		else if (pChoice == 7){
+		    saved = new Gengar();
+		    yourPokemon.add(saved);
+		}
+		else if (pChoice == 8){
+		    saved = new Snorlax();
+		    yourPokemon.add(saved);
+		}
+		else if (pChoice == 9){
+		    saved = new Scyther();
+		    yourPokemon.add(saved);
+		}
+		else if (pChoice == 10){
+		    saved = new Dragonite();
 		    yourPokemon.add(saved);
 		}
 		else {
@@ -616,11 +661,15 @@ public class Woo {
     public int getWin(){
 	return numWin;
     }
+    public int getLose(){
+	return numPlay - numWin;
+    }
     public int getKill(){
 	return numKills;
     }
 	    
     public static void main(String[] arr) {
+
 	boolean exit = false;
 	Woo game = new Woo();
 	game.newgame();
@@ -669,6 +718,7 @@ public class Woo {
 		    System.out.println("Choose a valid mode");
 	    }
 	    if (mode == 2){
+		System.out.println(line + "Battle Mode:"
 		System.out.println("Your participated in " + game.getPlay() + " battles.");
 		System.out.println("You won " + game.getWin() + " times.");
 		System.out.println("In survival mode, you killed a total of " + game.getKill() + " Pokemons.");
