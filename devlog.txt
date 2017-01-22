@@ -108,7 +108,7 @@ Jake Zaia :: Made ansii art for lapras.
 
 2017-01-20
 -------------------------------------------------------------
-Tim Wang :: Made Pokemon class Snorlax.
+Tim Wang :: Made Pokemon class Snorlax, added option for player stats in Woo.
 Rihui Zheng :: Added in Pokemon options for Gengar and Lapras in Woo, fix some bugs in Woo
 Jake Zaia :: Made ansii art for Gengar and Snorlax, Changed Woo so it displays both sides' Pokemon.
 
@@ -118,11 +118,5 @@ Tim Wang :: Made classes for Machamp and Aerodactyl.
 Rihui Zheng :: -Made class for Scyther, made ansi art for Scyther.
       	       -Made healing moves possible, changed moves in some classes to healing.
 
-2017-01-20
--------------------------------------------------------------
-Tim Wang :: Added player's stats in Woo.
 
-2017-01-21
--------------------------------------------------------------
-Tim Wang :: Added Machamp & Aerodactyl.
 ==============================================================
