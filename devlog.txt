@@ -16,27 +16,32 @@ Flesh out each category whenever necessary, appropriate.
 ------------------------------------------
 OBSTACLES OVERCOME
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
--Implementing BattleUtils would take hours of work if we encoded it from scratch. But Jake decided to old Netlogo code to java, saving us lots of time from redundatn coding. 
--Implementing multi-pokemon battle also took lots of work. We were unsure about how to store these pokemons. Tim decided to import ArrayList to store them. 
+-Implementing BattleUtils would take hours of work if we encoded it from scratch. But Jake decided to translate old Netlogo code into java, saving us lots of time from redundant coding. 
+-Implementing multi-pokemon battle also took lots of work. We were unsure about how to store these pokemons. Tim decided to import ArrayList to store them.
+-The ascii arts we found were too big, so Jake decided to cut a few lines from each art so it will fit in the terminal.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-Issues? What issues? We're PERFECT!
 
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-Ansi art looks cool!!
 
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-Instead of using ascii, we are using ansi art.
 
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 LESSONS LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-Never, EVER forget to pull before commiting.
 
 
 ||||||||||||||||||||||||||||||||||||||||||
@@ -76,7 +81,7 @@ Jake Zaia :: Created class Move, finished BattleUtils, & fixed various formattin
 2017-01-15
 --------------------------------------------------------------
 Rihui Zheng :: -Modified Woo.java: Intro, user name, keeps repeating until user asks it to end. Began working on game options (battle, exit, etc).
-      	       -Made new class Charizard.
+      	       -Made new class Charizard, Blastoise and Venusaur.
 Jake Zaia :: Created class AI, reinforced BattleUtils usefullness, helped RiHui clean up readablility in Woo.
 
 
@@ -92,9 +97,25 @@ Tim Wang :: -Finished updating Woo. Now players can start with 6 pokemons.
 2017-01-18
 --------------------------------------------------------------
 Tim Wang :: -Updated Woo. Added back first-player feature and added 6v6 battle mode.
+Rihui Zheng :: -Updated Woo for efficiency.
+Jake Zaia :: Started changing ascii art to acsi art for Pikachu, Charizard, Blastoise and Venusaur.
 
 2017-01-19
 -------------------------------------------------------------
 Tim Wang :: Added Gengar, Dragonite & Lapras.
+Rihui Zheng :: Changed battle modes for Woo, up to 6v6.
+Jake Zaia :: Made ansii art for lapras.
+
+2017-01-20
+-------------------------------------------------------------
+Tim Wang :: Made Pokemon class Snorlax.
+Rihui Zheng :: Added in Pokemon options for Gengar and Lapras in Woo, fix some bugs in Woo
+Jake Zaia :: Made ansii art for Gengar and Snorlax, Changed Woo so it displays both sides' Pokemon.
+
+2017-01-21
+-------------------------------------------------------------
+Tim Wang :: Made classes for Machamp and Aerodactyl.
+Rihui Zheng :: -Made class for Scyther, made ansi art for Scyther.
+      	       -Made healing moves possible, changed moves in some classes to healing.
 
 ==============================================================
