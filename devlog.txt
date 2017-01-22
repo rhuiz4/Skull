@@ -97,4 +97,11 @@ Tim Wang :: -Updated Woo. Added back first-player feature and added 6v6 battle m
 -------------------------------------------------------------
 Tim Wang :: Added Gengar, Dragonite & Lapras.
 
+2017-01-20
+-------------------------------------------------------------
+Tim Wang :: Added player's stats in Woo.
+
+2017-01-21
+-------------------------------------------------------------
+Tim Wang :: Added Machamp & Aerodactyl.
 ==============================================================
