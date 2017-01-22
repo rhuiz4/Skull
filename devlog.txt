@@ -3,50 +3,38 @@ Tim Wang
 RiHui Zheng
 Jake Zaia
 pd 05
----------------------
+------------------------------------------
 Pokemon Battle Simulator
+------------------------------------------
 
-zone of reflection--
-Flesh out each category whenever necessary, appropriate.
- Need not be fully filled in until end of project,
- but best done as you go along.
-
-
+------------------------------------------
 /////////// Zone of Reflection \\\\\\\\\\\
 ------------------------------------------
 OBSTACLES OVERCOME
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 -Implementing BattleUtils would take hours of work if we encoded it from scratch. But Jake decided to translate old Netlogo code into java, saving us lots of time from redundant coding. 
--Implementing multi-pokemon battle also took lots of work. We were unsure about how to store these pokemons. Tim decided to import ArrayList to store them.
--The ascii arts we found were too big, so Jake decided to cut a few lines from each art so it will fit in the terminal.
-
+-Implementing multi-pokemon battles also took lots of work. We were unsure about how to store these pokemons. Tim decided to import class ArrayList to store them.
+-The ascii art we found was too big, so Jake decided to cut a few lines from each so it would fit in the terminal.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 -Issues? What issues? We're PERFECT!
-
-
+-Speaking of perfect, this project does not count for perfect EVs, IVs, or any EVs, or IVs. (Advanced battle mechanics)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 -Ansi art looks cool!!
-
-
+-Git is not a dark scary abyss that you should avoid at all costs.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
--Instead of using ascii, we are using ansi art. It's wayyy cooler.
-
-
+-Instead of using ascii, we used ansi art.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 LESSONS LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
--Never, EVER forget to pull before commiting.
-
-
+-Never, EVER forget to pull before pushing.
+-In the case you do forget to pull before pushing, make sure you know vim shortcuts because gitbash of windows is mean.
 ||||||||||||||||||||||||||||||||||||||||||
-
-
 
 
 ==============================================================
@@ -62,14 +50,15 @@ LESSONS LEARNED
 --------------------------------------------------------------
 Tim Wang :: Worked on todo.txt
 RiHui Zheng :: Worked on flowchart
-Jake Zaia ::
+Jake Zaia :: Worked on todo as well.
+==============================================================
 
 2017-01-11
 --------------------------------------------------------------
 Tim Wang :: Created Pokemon abstract class and its abstract methods & instance variables.
 RiHui Zheng :: Began working on Woo.java
 Jake Zaia :: Reformatted devlog, and test for planning. Began work on BattleUtils functionality, and layed groundwork for Pokemon.java
-
+==============================================================
 
 2017-01-12
 --------------------------------------------------------------
@@ -83,40 +72,46 @@ Jake Zaia :: Created class Move, finished BattleUtils, & fixed various formattin
 Rihui Zheng :: -Modified Woo.java: Intro, user name, keeps repeating until user asks it to end. Began working on game options (battle, exit, etc).
       	       -Made new class Charizard, Blastoise and Venusaur.
 Jake Zaia :: Created class AI, reinforced BattleUtils usefullness, helped RiHui clean up readablility in Woo.
-
+==============================================================
 
 2017-01-16
 --------------------------------------------------------------
 Tim Wang :: Started reformatting Woo and implementing 3-pokemon battle.
+==============================================================
+
 
 2017-01-17
 --------------------------------------------------------------
-Tim Wang :: -Finished updating Woo. Now players can start with 6 pokemons.
+Tim Wang :: -Finished updating Woo. Now players can start with 6 pokemon.
 	    -Made Pokemon not an abstract class
+Jake Zaia :: Tied up loose ends
+==============================================================
 
 2017-01-18
 --------------------------------------------------------------
 Tim Wang :: -Updated Woo. Added back first-player feature and added 6v6 battle mode.
 Rihui Zheng :: -Updated Woo for efficiency.
 Jake Zaia :: Started changing ascii art to acsi art for Pikachu, Charizard, Blastoise and Venusaur.
+==============================================================
 
 2017-01-19
 -------------------------------------------------------------
 Tim Wang :: Added Gengar, Dragonite & Lapras.
 Rihui Zheng :: Changed battle modes for Woo, up to 6v6.
-Jake Zaia :: Made ansii art for lapras.
+Jake Zaia :: Made ansii art for lapras, fixed miscellaneous bugs.
+==============================================================
 
 2017-01-20
 -------------------------------------------------------------
 Tim Wang :: Made Pokemon class Snorlax, added option for player stats in Woo.
 Rihui Zheng :: Added in Pokemon options for Gengar and Lapras in Woo, fix some bugs in Woo
 Jake Zaia :: Made ansii art for Gengar and Snorlax, Changed Woo so it displays both sides' Pokemon.
+==============================================================
 
 2017-01-21
 -------------------------------------------------------------
 Tim Wang :: Made classes for Machamp and Aerodactyl.
 Rihui Zheng :: -Made class for Scyther, made ansi art for Scyther.
       	       -Made healing moves possible, changed moves in some classes to healing.
-
-
+Jake Zaia :: Finished up last touches on certain Pokemon, commented up code, implemented AI (finally) updated UML.
 ==============================================================
