@@ -31,9 +31,7 @@ public class Woo {
 
     private static String line = "=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=";
     private String pname = "";
-    private int numKills = 0;
-    private int numWin = 0;
-    private int numPlay = 0;
+    private int numKills, numWin, numPlay = 0;
     
     public void newgame(){
 
@@ -72,7 +70,7 @@ public class Woo {
 	
     public void playSurvival(){
 
-	int numAlive = 6;
+	int numAlive = 7;
 	int oppHP = 0;
 	int playHP = 0;
 	int playerMove = 0;
@@ -335,7 +333,7 @@ public class Woo {
 		    }
 		}
 		//System.out.println(line);
-	        if (playerFainted == true && Counter < 6){
+	        if (playerFainted == true && Counter < 8){
 		    System.out.println("You just lost your " + playName + "! But don't worry because you have more pokemons at hand!");
 		    player = yourPokemon.get(Counter);
 		    playName = player.getName();
