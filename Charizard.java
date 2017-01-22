@@ -12,10 +12,10 @@ public class Charizard extends Pokemon{
 	_currhp = _hp;
 	_type1 = "Fire";
 	_type2 = "Flying";
-	_move1 = new Move("Flamethrower", "Fire", 90, 1, false, false);
-	_move2 = new Move("Air Slash", "Flying", 75, .95, false, false);
-	_move3 = new Move("Dragon Pulse", "Dragon", 85, 1, false, false);
-	_move4 = new Move("Earthquake", "Ground", 100, 1, true, false);
+	_move1 = new Move("Flamethrower", "Fire", 90, 1, false, false, false);
+	_move2 = new Move("Air Slash", "Flying", 75, .95, false, false, false);
+	_move3 = new Move("Roost", "Flying", 50, 1, false, false, true);
+	_move4 = new Move("Earthquake", "Ground", 100, 1, true, false, false);
     }
 
     public String toString(){

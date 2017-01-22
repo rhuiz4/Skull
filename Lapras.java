@@ -11,10 +11,10 @@ public class Lapras extends Pokemon{
 	_currhp = _hp;
 	_type1 = "Water";
 	_type2 = "Ice";
-	_move1 = new Move("Hydro Pump", "Water", 110, .8, false, false);
-	_move2 = new Move("Ice Beam", "Ice", 90, 1, false, false);
-	_move3 = new Move("Surf", "Water", 90, 1, false, false);
-	_move4 = new Move("Thunderbolt", "Electric", 90, 1, false, false);
+	_move1 = new Move("Sheer Cold", "Ice", 100000, .3, false, false, false);
+	_move2 = new Move("Ice Beam", "Ice", 90, 1, false, false, false);
+	_move3 = new Move("Surf", "Water", 90, 1, false, false, false);
+	_move4 = new Move("Thunderbolt", "Electric", 90, 1, false, false, false);
     }
 
     public String toString(){

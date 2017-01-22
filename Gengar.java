@@ -10,10 +10,10 @@ public class Gengar extends Pokemon{
 	_currhp = _hp;
 	_type1 = "Ghost";
 	_type2 = "Poison";
-	_move1 = new Move("Shadow Ball", "Ghost", 80, 1, false, false);
-	_move2 = new Move("Sludge Bomb", "Poison", 90, 1, false, false);
-	_move3 = new Move("Psychic", "Psychic", 90, 1, false, false);
-	_move4 = new Move("Thunderbolt", "Electric", 90, 1, false, false);
+	_move1 = new Move("Shadow Ball", "Ghost", 80, 1, false, false, false);
+	_move2 = new Move("Sludge Bomb", "Poison", 90, 1, false, false, false);
+	_move3 = new Move("Psychic", "Psychic", 90, 1, false, false, false);
+	_move4 = new Move("Thunderbolt", "Electric", 90, 1, false, false, false);
     }
 
     public String toString(){

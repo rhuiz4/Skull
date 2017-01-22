@@ -10,10 +10,10 @@ public class Snorlax extends Pokemon{
 	_speed = (int)(Math.random() *60 + 31);
 	_currhp = _hp;
 	_type1 = "Normal";
-	_move1 = new Move("Earthquake", "Ground", 100, 1, true, false);
-	_move2 = new Move("Crunch", "Dark", 80, 1, true, true);
-	_move3 = new Move("Body Slam", "Normal", 85, 1, true, true);
-	_move4 = new Move("Zen Headbutt", "Psychic", 80, .9, true, true);
+	_move1 = new Move("Earthquake", "Ground", 100, 1, true, false, false);
+	_move2 = new Move("Crunch", "Dark", 80, 1, true, true, false);
+	_move3 = new Move("Body Slam", "Normal", 85, 1, true, true, false);
+	_move4 = new Move("Zen Headbutt", "Psychic", 80, .9, true, true, false);
     }
 
     public String toString(){

@@ -29,7 +29,7 @@ public class Woo {
     }
     
 
-    private String line = "=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=";
+    private static String line = "=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=";
     private String pname = "";
     private int numKills = 0;
     private int numWin = 0;
@@ -95,7 +95,8 @@ public class Woo {
 	choices += "9) Dragonite\n";
 	choices += "10) Scyther\n";
 	choices += "11) Machamp\n";
-	choices += "12) Random\n";
+	choices += "12) Aerodactyl\n";
+	choices += "13) Random\n";
 	choices += "Enter you choice (as a number):";
 
 	//user chooses their own Pokemen
@@ -113,8 +114,8 @@ public class Woo {
 	    int pChoice = 0;
 	    while (pChoice == 0) {
 		pChoice = Keyboard.readInt();
-		if (pChoice == 12){
-		    pChoice = (int) (Math.random() * 11 + 1);
+		if (pChoice == 13){
+		    pChoice = (int) (Math.random() * 12 + 1);
 		}
 		if (pChoice == 1){
 		    saved = new Pikachu();
@@ -149,15 +150,19 @@ public class Woo {
 		    yourPokemon.add(saved);
 		}
 		else if (pChoice == 9){
-		    saved = new Scyther();
+		    saved = new Dragonite();
 		    yourPokemon.add(saved);
 		}
 		else if (pChoice == 10){
-		    saved = new Dragonite();
+		    saved = new Scyther();
 		    yourPokemon.add(saved);
 		}
 		else if (pChoice == 11){
 		    saved = new Machamp();
+		    yourPokemon.add(saved);
+		}
+		else if (pChoice == 12){
+		    saved = new Aerodactyl();
 		    yourPokemon.add(saved);
 		}
 		else {
@@ -176,7 +181,7 @@ public class Woo {
 	String playName = player.getName();
 	System.out.println("Go " + playName);
 	Pokemon opponent = new Pokemon();
-	int oChoice = (int) (Math.random() * 11 + 1);
+	int oChoice = (int) (Math.random() * 12 + 1);
 	if (oChoice == 1)
 	    opponent = new Pikachu();
 	else if (oChoice == 2)
@@ -197,8 +202,10 @@ public class Woo {
 	    opponent = new Dragonite();
 	else if (oChoice == 10)
 	    opponent = new Scyther();
-	else if (oChoice ==11)
+	else if (oChoice == 11)
 	    opponent = new Machamp();
+	else if (oChoice == 12)
+	    opponent = new Aerodactyl();
 	String oppName = opponent.getName();
 	
 	
@@ -361,8 +368,10 @@ public class Woo {
 			opponent = new Dragonite();
 		    else if (oChoice == 10)
 			opponent = new Scyther();
-		    else if (oChoice ==11)
+		    else if (oChoice == 11)
 			opponent = new Machamp();
+		    else if (oChoice == 12)
+			opponent = new Aerodactyl();
 		    
 		    
 		    
@@ -421,8 +430,8 @@ public class Woo {
 	    int pChoice = 0;
 	    while (pChoice == 0) {
 		pChoice = Keyboard.readInt();
-		if (pChoice == 12){
-		    pChoice = (int) (Math.random() * 11 + 1);
+		if (pChoice == 13){
+		    pChoice = (int) (Math.random() * 12 + 1);
 		}
 		if (pChoice == 1){
 		    saved = new Pikachu();
@@ -466,6 +475,10 @@ public class Woo {
 		}
 		else if (pChoice == 11){
 		    saved = new Machamp();
+		    yourPokemon.add(saved);
+		}
+		else if (pChoice == 12){
+		    saved = new Aerodactyl();
 		    yourPokemon.add(saved);
 		}
 		else {
@@ -512,26 +525,30 @@ public class Woo {
 		opposaved = new Lapras();
 		oppoPokemon.add(opposaved);
 	    }
-	    else if (pChoice == 7){
-		saved = new Gengar();
-		oppoPokemon.add(saved);
+	    else if (oChoice == 7){
+		opposaved = new Gengar();
+		oppoPokemon.add(opposaved);
 	    }
-	    else if (pChoice == 8){
-		saved = new Snorlax();
-		oppoPokemon.add(saved);
+	    else if (oChoice == 8){
+		opposaved = new Snorlax();
+		oppoPokemon.add(opposaved);
 	    }
-	    else if (pChoice == 9){
-		saved = new Dragonite();
-		oppoPokemon.add(saved);
+	    else if (oChoice == 9){
+		opposaved = new Dragonite();
+		oppoPokemon.add(opposaved);
 	    }
-	    else if (pChoice == 10){
-		saved = new Scyther();
-		oppoPokemon.add(saved);
+	    else if (oChoice == 10){
+		opposaved = new Scyther();
+		oppoPokemon.add(opposaved);
 	    }
-	    else if (pChoice == 11){
-		saved = new Machamp();
-		oppoPokemon.add(saved);
+	    else if (oChoice == 11){
+		opposaved = new Machamp();
+		oppoPokemon.add(opposaved);
 	    }
+	    else if (oChoice == 12){
+		opposaved = new Aerodactyl();
+		oppoPokemon.add(opposaved);
+		}
 	}
 	Pokemon opponent = oppoPokemon.get(0);
 	String oppName = opponent.getName();
@@ -716,6 +733,7 @@ public class Woo {
     public int getKill(){
 	return numKills;
     }
+
 	    
     public static void main(String[] arr) {
 
@@ -767,11 +785,12 @@ public class Woo {
 		    System.out.println("Choose a valid mode");
 	    }
 	    if (mode == 2){
-		System.out.println(line + "Battle Mode:");
+		System.out.println("\n\n" + line + "\nBattle Mode:\n");
 		System.out.println("Your participated in " + game.getPlay() + " battles.");
 		System.out.println("You won " + game.getWin() + " times.");
-		System.out.println(line + "Survival Mode:");
+		System.out.println("\n" + line + "\nSurvival Mode:\n");
 		System.out.println("In survival mode, you killed a total of " + game.getKill() + " Pokemons.");
+		System.out.println(line);
 	    }
 	    if (mode == 3) {
 		System.out.println("Have a nice day, " + game.getpName() + ".");

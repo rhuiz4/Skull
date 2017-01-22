@@ -10,6 +10,12 @@ public class Pokemon{
 
     public void takeDamage(int d){ _currhp -= d;}
 
+    public void heal(double h){
+	_currhp += (int)(h/100 * _hp);
+	if (_currhp > _hp)
+	    _currhp = _hp;
+    } 
+
 
     //Move using methods
     public void move1(Pokemon p){

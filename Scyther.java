@@ -12,10 +12,10 @@ public class Scyther extends Pokemon{
 	_currhp = _hp;
 	_type1 = "Bug";
 	_type2 = "Flying";
-	_move1 = new Move("Thief", "Dark", 90, 1, true, true);
-	_move2 = new Move("Aerial Ace", "Flying", 90, 1, true, true);
-	_move3 = new Move("X-Scissors", "Bug", 80, 1, true, true);
-	_move4 = new Move("Brick Break", "Fighting", 75, 1, true, true);
+	_move1 = new Move("Thief", "Dark", 90, 1, true, true, false);
+	_move2 = new Move("Aerial Ace", "Flying", 90, 1, true, true, false);
+	_move3 = new Move("X-Scissors", "Bug", 80, 1, true, true, false);
+	_move4 = new Move("Brick Break", "Fighting", 75, 1, true, true, false);
     }
 
     public String toString(){

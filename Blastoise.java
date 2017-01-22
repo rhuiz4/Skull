@@ -11,10 +11,10 @@ public class Blastoise extends Pokemon{
 	_speed = (int)(Math.random() *70 + 74);
 	_currhp = _hp;
 	_type1 = "Water";
-	_move1 = new Move("Hydro Pump", "Water", 110, .8, false, false);
-	_move2 = new Move("Ice Beam", "Ice", 90, 1, false, false);
-	_move3 = new Move("Scald", "Water", 80, 1, false, false);
-	_move4 = new Move("Aura Sphere", "Fighting", 80, 10, false, false);
+	_move1 = new Move("Hydro Pump", "Water", 110, .8, false, false, false);
+	_move2 = new Move("Ice Beam", "Ice", 90, 1, false, false, false);
+	_move3 = new Move("Scald", "Water", 80, 1, false, false, false);
+	_move4 = new Move("Aura Sphere", "Fighting", 80, 10, false, false, false);
     }
 
     public String toString(){

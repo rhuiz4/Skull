@@ -12,10 +12,10 @@ public class Venusaur extends Pokemon{
 	_currhp = _hp;
 	_type1 = "Grass";
 	_type2 = "Poison";
-	_move1 = new Move("Petal Blizzard", "Grass", 90, 1, true, false);
-	_move2 = new Move("Earthquake", "Ground", 100, 1, true, false);
-	_move3 = new Move("Leaf Storm", "Grass", 130, .9, false, false);
-	_move4 = new Move("Sludge Bomb", "Poison", 90, 10, false, false);
+	_move1 = new Move("Petal Blizzard", "Grass", 90, 1, true, false, false);
+	_move2 = new Move("Earthquake", "Ground", 100, 1, true, false, false);
+	_move3 = new Move("Synthesis", "Grass", 50, 1, false, false, true);
+	_move4 = new Move("Sludge Bomb", "Poison", 90, 10, false, false, false);
     }
 
     public String toString(){

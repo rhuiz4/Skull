@@ -11,10 +11,10 @@ public class Mewtwo extends Pokemon{
 	_speed = (int)(Math.random() *80 + 121);
 	_currhp = _hp;
 	_type1 = "Psychic";
-	_move1 = new Move("Psychic", "Psychic", 90, 1, false, false);
-	_move2 = new Move("Thunderbolt", "Electric", 90, 1, false, false);
-	_move3 = new Move("Ice Beam", "Ice", 90 , 1, false, false);
-	_move4 = new Move("Flamethrower", "Fire", 90, 1, false, false);
+	_move1 = new Move("Psychic", "Psychic", 90, 1, false, false, false);
+	_move2 = new Move("Thunderbolt", "Electric", 90, 1, false, false, false);
+	_move3 = new Move("Ice Beam", "Ice", 90 , 1, false, false, false);
+	_move4 = new Move("Flamethrower", "Fire", 90, 1, false, false, false);
     }
 
     public String toString(){

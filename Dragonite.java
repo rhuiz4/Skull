@@ -11,10 +11,10 @@ public class Dragonite extends Pokemon{
 	_currhp = _hp;
 	_type1 = "Dragon";
 	_type2 = "Flying";
-	_move1 = new Move("Hurricane", "Flying", 110, .7, false, false);
-	_move2 = new Move("Dragon Claw", "Dragon", 80, 1, true, true);
-	_move3 = new Move("Earthquake", "Ground", 100, 1, true, false);
-	_move4 = new Move("Thunderbolt", "Electric", 90, 1, false, false);
+	_move1 = new Move("Hurricane", "Flying", 110, .7, false, false, false);
+	_move2 = new Move("Dragon Claw", "Dragon", 80, 1, true, true, false);
+	_move3 = new Move("Earthquake", "Ground", 100, 1, true, false, false);
+	_move4 = new Move("Thunderbolt", "Electric", 90, 1, false, false, false);
     }
 
     public String toString(){
