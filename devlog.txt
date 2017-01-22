@@ -118,4 +118,11 @@ Tim Wang :: Made classes for Machamp and Aerodactyl.
 Rihui Zheng :: -Made class for Scyther, made ansi art for Scyther.
       	       -Made healing moves possible, changed moves in some classes to healing.
 
+2017-01-20
+-------------------------------------------------------------
+Tim Wang :: Added player's stats in Woo.
+
+2017-01-21
+-------------------------------------------------------------
+Tim Wang :: Added Machamp & Aerodactyl.
 ==============================================================

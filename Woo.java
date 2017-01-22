@@ -687,6 +687,7 @@ public class Woo {
 	    }
 	    //System.out.println(line);
 	    if (playerFainted == true && Counter < numPokes){
+		System.out.println(line);
 		System.out.println("Your " + playName + " fainted! But don't worry because you have more pokemons at hand!");
 		player = yourPokemon.get(Counter);
 		playName = player.getName();
@@ -695,6 +696,7 @@ public class Woo {
 		System.out.println("You have " + yournumAlive + " Pokemon remaining.");
 	    }
 	    if (opponentFainted == true && CounterOppo < numPokes){
+		System.out.println(line);
 		System.out.println("The foe's " + oppName + " fainted!");
 		opponent = oppoPokemon.get(CounterOppo);
 		oppName = opponent.getName();
@@ -706,7 +708,8 @@ public class Woo {
 		
 	//who wins?
 	if (yournumAlive == 0){
-	    System.out.println("Your " + playName + "fainted!\nYou ran out of Pokemon! You paid $1,000,000 to the winner! You blacked out!");
+	    System.out.println(line);
+	    System.out.println("Your " + playName + " fainted!\nYou ran out of Pokemon! You paid $1,000,000 to the winner! You blacked out!");
 	}
 	else if (oppnumAlive == 0){
 	    System.out.println("The foe's " + oppName + " fainted!\nYou defeated Youngster Joey!\nYoungster Joey: You got lucky this time!\n You got $1,000,000 for winning");
