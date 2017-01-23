@@ -121,6 +121,6 @@ Rihui Zheng :: -Made class for Scyther, made ansi art for Scyther.
 2017-01-22
 -------------------------------------------------------------
 Tim Wang :: Added pokeball capture option in survival mode & switching Pokemon in the middle of battle in Woo. Added mutator setCurrHP(int hp) in Pokemon
-Rihui Zheng ::
+Rihui Zheng :: Made ansi art for Aerodactyl, made final bug fixes and added "Back" option for battle mode in Woo.
 Jake Zaia :: Finished up last touches on certain Pokemon, commented up code, implemented AI (finally) updated UML.
 ==============================================================
