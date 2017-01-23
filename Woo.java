@@ -297,6 +297,7 @@ public class Woo {
 			else{
 			    System.out.println("Oh no! The Pokemon broke free!");
 			}
+			System.out.println("You have " + balls + " Pokeballs left.");
 		    }
 		}
 		else{
@@ -342,6 +343,7 @@ public class Woo {
 		    else{
 			System.out.println("Oh no! The Pokemon broke free!");
 		    }
+		    System.out.println("You have " + balls + " Pokeballs left.");
 			
 		}
 		//if enemy is still alive
