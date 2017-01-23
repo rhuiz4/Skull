@@ -49,19 +49,19 @@ public class Woo {
     public void newgame(){ //Runs once on startup
 
 	System.out.println(line + "\n\n\n");
-	System.out.println("                                .::.                                 ");	
-	System.out.println("                              .;:**                                  ");
-	System.out.println("                              `                                      ");
-	System.out.println("  .:XHHHHk.              db.   .;;.     dH  MX                       ");
-	System.out.println("oMMMMMMMMMMM       ~MM  dMMP :MMMMMR   MMM  MR      ~MRMN            ");
-	System.out.println("QMMMMMb   MMX       MMMMMMP !MX^ :M~   MMM MMM  .oo. XMMM  MMM       ");
-	System.out.println("  `MMMM.  )M> :X!Hk. MMMM   XMM.o^  .  MMMMMMM X?XMMM MMM>!MMP       ");
-	System.out.println("   ^MMMb.dM! XM M^?M MMMMMX.`MMMMMMMM~ MM MMM XM `^ MX MMXXMM        ");
-	System.out.println("    ~MMMMM~ XMM. .XM XM`^MMMb.~*?**~ .MMX V t MMbooMM XMMMMMP        ");
-	System.out.println("     ?MMM>  YMMMMMM! MM   `?MMRb.    `MMM   !L;MMMMM XM IMMM         ");
-	System.out.println("      MMMX   ^MMMM^  MM       ~%:           !Mh.    dMI IMMP         ");
-	System.out.println("      ^MMM.                                             IMX          ");
-	System.out.println("       ~M!M                                             IMP          ");
+	System.out.println("\u001B[33m                                 .::.                                 ");	
+	System.out.println("\u001B[33m                               .;:**                                  ");
+	System.out.println("\u001B[33m                               `                                      ");
+	System.out.println("\u001B[33m   .:XHHHHk.              db.   .;;.     dH  MX                       ");
+	System.out.println("\u001B[33m oMMMMMMMMMMM       ~MM  dMMP :MMMMMR   MMM  MR      ~MRMN            ");
+	System.out.println("\u001B[33m QMMMMMb   MMX       MMMMMMP !MX^ :M~   MMM MMM  .oo. XMMM  MMM       ");
+	System.out.println("\u001B[33m   `MMMM.  )M> :X!Hk. MMMM   XMM.o^  .  MMMMMMM X?XMMM MMM>!MMP       ");
+	System.out.println("\u001B[33m    ^MMMb.dM! XM M^?M MMMMMX.`MMMMMMMM~ MM MMM XM `^ MX MMXXMM        ");
+	System.out.println("\u001B[33m     ~MMMMM~ XMM. .XM XM`^MMMb.~*?**~ .MMX V t MMbooMM XMMMMMP        ");
+	System.out.println("\u001B[33m      ?MMM>  YMMMMMM! MM   `?MMRb.    `MMM   !L;MMMMM XM IMMM         ");
+	System.out.println("\u001B[33m       MMMX   ^MMMM^  MM       ~%:           !Mh.    dMI IMMP         ");
+	System.out.println("\u001B[33m       ^MMM.                                             IMX          ");
+	System.out.println("\u001B[33m        ~M!M                                             IMP          ");
 	System.out.println("\n\n\nA game by Jake Zaia, Rihui Zheng, and Tim Wang. Enjoy.\n   --Pokemon sprites by git user vsoch\n" + line + "\n\n");
 	//Credit to github user vsoch:        https://github.com/vsoch/pokemon-ascii
         
@@ -133,7 +133,7 @@ public class Woo {
 	//user chooses their own Pokemen
 	System.out.println(line);
 	System.out.println("So you want to battle. Lets see, which of these Pokemon do you want to be your partners?\n");
-	for (int x = 1; x < 8; x++){ //Allows the user to make a choice of Pokemon
+	for (int x = 1; x < 7; x++){ //Allows the user to make a choice of Pokemon
 	    Pokemon saved;
 
 	    String msg = "";
@@ -955,7 +955,7 @@ public class Woo {
 	    }
 
 	    if (mode == 1){
-		System.out.println("What type of battle do you want to play?\n 1) 1 vs 1\n 2) 2 vs 2\n 3) 3 vs 3\n 4) 4 vs 4\n 5) 5 vs 5\n 6) 6 vs 6\n 7) Survival Mode");
+		System.out.println("What type of battle do you want to play?\n 1) 1 vs 1\n 2) 2 vs 2\n 3) 3 vs 3\n 4) 4 vs 4\n 5) 5 vs 5\n 6) 6 vs 6\n 7) Survival Mode\n 8) Back");
 		mode = 0;
 		while (mode == 0){
 		    try{
@@ -964,13 +964,15 @@ public class Woo {
 		    catch( Exception e){
 			System.out.println("Please choose a valid mode.");
 		    }
-		    if (!(mode > 0 && mode < 8)) {
+		    if (!(mode > 0 && mode < 9)) {
 			System.out.println("Please choose a valid mode.");
 			mode = 0;
 		    }
 		}
 		if (mode == 7)
 		    game.playSurvival();
+		else if (mode == 8)
+		    System.out.println(line);
 		else if(mode < 7 && mode > 0) {
 		    game.BattleTrainer(mode);
 		    mode = 0;
