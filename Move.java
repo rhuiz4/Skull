@@ -29,4 +29,8 @@ public class Move{
 	else
 	    foe.takeDamage(BattleUtils.calcDamage(user, foe, this));
     }
+
+    public boolean equals(Move m){
+	return _name.equals(m._name);
+    }
 }

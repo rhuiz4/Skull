@@ -20,6 +20,15 @@ public class AI{ //AI class to be used by opposing NPC Pokemon.
 	}
 	return currBestMove; //Return the strongest Move found
     }    
+
+    public static void useBestMove(Pokemon user, Pokemon foe){
+	Move temp = findBestMove(user, foe);
+	if (temp.equals(user._move1)) user.move1(foe);
+	else if (temp.equals(user._move2)) user.move2(foe);
+	else if (temp.equals(user._move3)) user.move3(foe);
+	else user.move4(foe);
+    }
 }
+
 
 	   

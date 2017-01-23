@@ -6,7 +6,7 @@ import cs1.Keyboard;
 import java.util.ArrayList;
 public class Woo {
 
-    private static void printPokemon(Pokemon p1, Pokemon p2){
+    private static void printPokemon(Pokemon p1, Pokemon p2){ //Combines images of 2 pokemon and prints them
 	String s1 = p1.toString();
 	String s2 = p2.toString();
 	String toPrint = "";
@@ -26,14 +26,16 @@ public class Woo {
 	    System.out.print(toPrint);
 	    toPrint = "";
 	}
-    }
+    } //end of printPokemon()
     
 
-    private static String line = "=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=";
-    private String pname = "";
-    private int numKills, numWin, numPlay = 0;
+    private static String line = "=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*="; //The line used to separate messages
     
-    public void newgame(){
+    private String pname = ""; //The name the player wishes to be calls\ed
+    private int numKills, numWin, numPlay = 0;
+    private int _hardMode = -1;
+    
+    public void newgame(){ //Runs once on startup
 
 	System.out.println(line + "\n\n\n");
 	System.out.println("                                .::.                                 ");	
@@ -49,10 +51,11 @@ public class Woo {
 	System.out.println("      MMMX   ^MMMM^  MM       ~%:           !Mh.    dMI IMMP         ");
 	System.out.println("      ^MMM.                                             IMX          ");
 	System.out.println("       ~M!M                                             IMP          ");
-	System.out.println("\n\n\nA game by Jake Zaia, Rihui Zheng, and Tim Wang. Enjoy.\n--Pokemon sprites by git user vsoch\n" + line + "\n\n");
-
+	System.out.println("\n\n\nA game by Jake Zaia, Rihui Zheng, and Tim Wang. Enjoy.\n   --Pokemon sprites by git user vsoch\n" + line + "\n\n");
+	//Credit to github user vsoch:        https://github.com/vsoch/pokemon-ascii
         
 
+	//Gets player's name
 	System.out.println("Hello there, young trainer. Welcome to the World of Pokemon. May I ask you your name?");
 	while (pname == ""){
 	    try {
@@ -62,13 +65,29 @@ public class Woo {
 		System.out.println("C'mon...You know you have a name...");
 	    }
 	}
+
+	//Asks player if they want to play in hard mode
+	System.out.println("How about a little extra challenge?");
+	while (_hardMode == -1){
+	    try {
+		System.out.println("1) Just easy for me\n2) I'm pretty cool, let's go hard!");
+		int answer = Keyboard.readInt();
+		if (answer == 1) _hardMode = 0;
+		if (answer == 2) {_hardMode = 1; System.out.println("Lets do it!");}
+		
+	    }
+	    catch ( Exception e ) {
+		System.out.println("Come on, you got this!");
+	    }
+	}
+	
 	
 	System.out.println(line);
-    }
+    } // end of newGame()
 
 	
 	
-    public void playSurvival(){
+    public void playSurvival(){ //Play against an unlimited number of foes until you run out of Pokemon
 
 	int numAlive = 7;
 	int oppHP = 0;
@@ -103,7 +122,7 @@ public class Woo {
 	//user chooses their own Pokemen
 	System.out.println(line);
 	System.out.println("So you want to battle. Lets see, which of these Pokemons do you want to be your partners?\n");
-	for (int x = 1; x < 8; x++){
+	for (int x = 1; x < 8; x++){ //Allows the user to make a choice of Pokemon
 	    Pokemon saved;
 
 	    String msg = "";
@@ -181,7 +200,7 @@ public class Woo {
 	String playName = player.getName();
 	System.out.println("Go " + playName);
 	Pokemon opponent = new Pokemon();
-	int oChoice = (int) (Math.random() * 12 + 1);
+	int oChoice = (int) (Math.random() * 12 + 1); //Creates an opponent
 	if (oChoice == 1)
 	    opponent = new Pikachu();
 	else if (oChoice == 2)
@@ -253,22 +272,28 @@ public class Woo {
 		
 	    //if enemy is faster
 	    if (opponent.getSpeed() > player.getSpeed()) {
-		opponentMove = (int)(Math.random() * 5);		
-		if (opponentMove == 1){
-		    System.out.println("The wild " + oppName + " used " + opponent._move1 + "!");
-		    opponent.move1(player);
+	        if (_hardMode == 1){ //AIs are smarter
+		    System.out.println("The wild " + oppName + " used " + AI.findBestMove(opponent, player) + "!");
+		    AI.useBestMove(opponent, player);
 		}
-		else if (opponentMove == 2){
-		    System.out.println("The wild " + oppName + " used " + opponent._move2 + "!");
-		    opponent.move2(player);
-		}
-		else if (opponentMove == 3){
-		    System.out.println("The wild " + oppName + " used " + opponent._move3 + "!");
-		    opponent.move3(player);
-		}
-		else {
-		    System.out.println("The wild " + oppName + " used " + opponent._move4 + "!");
-		    opponent.move4(player);
+		else{			
+		    opponentMove = (int)(Math.random() * 4 + 1);		
+		    if (opponentMove == 1){
+			System.out.println("The wild " + oppName + " used " + opponent._move1 + "!");
+			opponent.move1(player);
+		    }
+		    else if (opponentMove == 2){
+			System.out.println("The wild " + oppName + " used " + opponent._move2 + "!");
+			opponent.move2(player);
+			}
+		    else if (opponentMove == 3){
+			System.out.println("The wild " + oppName + " used " + opponent._move3 + "!");
+			opponent.move3(player);
+		    }
+		    else {
+			System.out.println("The wild " + oppName + " used " + opponent._move4 + "!");
+			    opponent.move4(player);
+		    }
 		}
 		System.out.println(player.getCurrHP());
 		//if player's Pokemon is still alive
@@ -397,22 +422,28 @@ public class Woo {
 		
 		//if enemy is still alive
 		if (opponent.getCurrHP() > 0) {
-		    opponentMove = (int)(Math.random() * 5);		
-		    if (opponentMove == 1){
-			System.out.println("The wild " + oppName + " used " + opponent._move1 + "!");
+		    if (_hardMode == 1){ //AIs are smarter
+			System.out.println("The wild " + oppName + " used " + AI.findBestMove(opponent, player) + "!");
+			AI.useBestMove(opponent, player);
+		    }
+		    else{			
+			opponentMove = (int)(Math.random() * 4 + 1);		
+			if (opponentMove == 1){
+			    System.out.println("The wild " + oppName + " used " + opponent._move1 + "!");
 			opponent.move1(player);
-		    }
-		    else if (opponentMove == 2){
-			System.out.println("The wild " + oppName + " used " + opponent._move2 + "!");
-			opponent.move2(player);
-		    }
-		    else if (opponentMove == 3){
-			System.out.println("The wild " + oppName + " used " + opponent._move3 + "!");
-			opponent.move3(player);
-		    }
-		    else {
-			System.out.println("The wild " + oppName + " used " + opponent._move4 + "!");
-			opponent.move4(player);
+			}
+			else if (opponentMove == 2){
+			    System.out.println("The wild " + oppName + " used " + opponent._move2 + "!");
+			    opponent.move2(player);
+			}
+			else if (opponentMove == 3){
+			    System.out.println("The wild " + oppName + " used " + opponent._move3 + "!");
+			    opponent.move3(player);
+			}
+			else {
+			    System.out.println("The wild " + oppName + " used " + opponent._move4 + "!");
+			    opponent.move4(player);
+			}
 		    }
 		}
 		else
@@ -422,7 +453,6 @@ public class Woo {
 		    numAlive--;
 		}
 	    }
-	      
 	    //System.out.println(line);
 	    if (playerFainted == true && yourPokemon.size() != 1){
 		yourPokemon.remove(0);
@@ -481,7 +511,7 @@ public class Woo {
 	System.out.println("Game Over. You have killed and captured a total of " + kills + " Pokemon.");
         numKills+=kills;
     
-    } //end playgame()
+    } //end playSurvival()
 
     public void BattleTrainer(int numPokes){
       
@@ -687,24 +717,30 @@ public class Woo {
 		
 	    //if enemy is faster
 	    if (opponent.getSpeed() > player.getSpeed()) {
-		opponentMove = (int)(Math.random() * 5);		
-		if (opponentMove == 1){
-		    System.out.println("The foe's " + oppName + " used " + opponent._move1 + "!");
-		    opponent.move1(player);
+	        if (_hardMode == 1){ //AIs are smarter
+		    System.out.println("The wild " + oppName + " used " + AI.findBestMove(opponent, player) + "!");
+		    AI.useBestMove(opponent, player);
 		}
-		else if (opponentMove == 2){
-		    System.out.println("The foe's " + oppName + " used " + opponent._move2 + "!");
-		    opponent.move2(player);
+		else{			
+		    opponentMove = (int)(Math.random() * 4 + 1);		
+		    if (opponentMove == 1){
+			System.out.println("The wild " + oppName + " used " + opponent._move1 + "!");
+			opponent.move1(player);
+		    }
+		    else if (opponentMove == 2){
+			System.out.println("The wild " + oppName + " used " + opponent._move2 + "!");
+			opponent.move2(player);
+		    }
+		    else if (opponentMove == 3){
+			System.out.println("The wild " + oppName + " used " + opponent._move3 + "!");
+			opponent.move3(player);
+		    }
+		    else {
+			System.out.println("The wild " + oppName + " used " + opponent._move4 + "!");
+			opponent.move4(player);
+		    }
 		}
-		else if (opponentMove == 3){
-		    System.out.println("The foe's " + oppName + " used " + opponent._move3 + "!");
-		    opponent.move3(player);
-		}
-		else {
-		    System.out.println("The foe's " + oppName + " used " + opponent._move4 + "!");
-		    opponent.move4(player);
-		}
-		    
+				
 		//if player's Pokemon is still alive
 		if (player.getCurrHP() > 0){
 		    if (playerMove == 1){
@@ -799,22 +835,28 @@ public class Woo {
    
 		//if enemy is still alive
 		if (opponent.getCurrHP() > 0) {
-		    opponentMove = (int)(Math.random() * 5);		
-		    if (opponentMove == 1){
-			System.out.println("The foe's " + oppName + " used " + opponent._move1 + "!");
+		    if (_hardMode == 1){ //AIs are smarter
+			System.out.println("The wild " + oppName + " used " + AI.findBestMove(opponent, player) + "!");
+			AI.useBestMove(opponent, player);
+		    }
+		    else{			
+			opponentMove = (int)(Math.random() * 4 + 1);		
+			if (opponentMove == 1){
+			    System.out.println("The wild " + oppName + " used " + opponent._move1 + "!");
 			opponent.move1(player);
-		    }
-		    else if (opponentMove == 2){
-			System.out.println("The foe's " + oppName + " used " + opponent._move2 + "!");
-			opponent.move2(player);
-		    }
-		    else if (opponentMove == 3){
-			System.out.println("The foe's " + oppName + " used " + opponent._move3 + "!");
-			opponent.move3(player);
-		    }
-		    else {
-			System.out.println("The foe's " + oppName + " used " + opponent._move4 + "!");
-			opponent.move4(player);
+			}
+			else if (opponentMove == 2){
+			    System.out.println("The wild " + oppName + " used " + opponent._move2 + "!");
+			    opponent.move2(player);
+			}
+			else if (opponentMove == 3){
+			    System.out.println("The wild " + oppName + " used " + opponent._move3 + "!");
+			    opponent.move3(player);
+			}
+			else {
+			    System.out.println("The wild " + oppName + " used " + opponent._move4 + "!");
+			    opponent.move4(player);
+			}
 		    }
 		}
 		else{
