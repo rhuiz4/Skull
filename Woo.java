@@ -177,7 +177,6 @@ public class Woo {
 	System.out.println("You received 3 Pokeballs!");
 	System.out.println(line);
 
-	int Counter = 0;
 	Pokemon player = yourPokemon.get(0);
 	String playName = player.getName();
 	System.out.println("Go " + playName);
@@ -221,23 +220,30 @@ public class Woo {
 	    System.out.println("\n" + line + "\n" + pname + "'s " + playName + " HP: " + playHP + "%\n" + line);
 		
 	    //displays moves
-	    System.out.println("\nWhat will " + playName + " do?\nPlease enter the number corresponding to the move you want to use:\n1) " + player._move1 + "\t2) " + player._move2 + "\t3) " + player._move3 + "\t4) " + player._move4 + "\t5) Use a Pokeball");
+	    System.out.println("\nWhat will " + playName + " do?\nPlease enter the number corresponding to the move you want to use:\n1) " + player._move1 + "\t2) " + player._move2 + "\t3) " + player._move3 + "\t4) " + player._move4 + "\t5) Use a Pokeball" + "\t6) Swap this pokemon out");
 		
 	    //keeps on asking the user to put in integer until they input a valid input
 	    validMove = false;
 	    while (!validMove) {
 		playerMove = Keyboard.readInt();
 		    
-		if (playerMove >= 1 && playerMove <= 5) {
+		if (playerMove >= 1 && playerMove <= 6) {
+		    //ask if player had run out of Pokeballs.
 		    if (playerMove != 5 || balls != 0){
-			validMove = true;
+			//ask if player still has a pokemon left.
+			if (playerMove != 6 || yourPokemon.size() != 1){
+			    validMove = true;
+			}
+			else{
+			    System.out.println("You only have this pokemon left!");
+			}
 		    }
 		    else{
 			System.out.println("You ran out of Pokeballs!");
 		    }
 		}
 		else {
-		    System.out.println("Please input an integer between 1-5 corresponding to the move you want to use:");
+		    System.out.println("Please input an integer between 1-6 corresponding to the move you want to use:");
 		}
 		    
 	    }
@@ -264,7 +270,7 @@ public class Woo {
 		    System.out.println("The wild " + oppName + " used " + opponent._move4 + "!");
 		    opponent.move4(player);
 		}
-		
+		System.out.println(player.getCurrHP());
 		//if player's Pokemon is still alive
 		if (player.getCurrHP() > 0){
 		    if (playerMove == 1){
@@ -299,17 +305,38 @@ public class Woo {
 			}
 			System.out.println("You have " + balls + " Pokeballs left.");
 		    }
+		    else if (playerMove == 6){
+			System.out.println("Come back! " + playName + "!");
+			System.out.println("Which Pokemon do you want to swap with your " + playName + "?");
+			for (int x = 1; x < yourPokemon.size(); x++){
+			    System.out.println( x + ". " + yourPokemon.get(x).getName() + ", HP " + yourPokemon.get(x).getCurrHP() + "/" + yourPokemon.get(x).getMaxHP());
+			}
+			int subs = 0;
+			while (subs == 0){
+			    subs = Keyboard.readInt();
+			    if (subs > yourPokemon.size()-1){
+				System.out.println("Invalid choice, please choose again:");
+				subs = 0;
+			    }
+			    else{
+				player = yourPokemon.get(subs);
+				yourPokemon.set(0, yourPokemon.set(subs, yourPokemon.get(0)));
+				playName = player.getName();
+				System.out.println("Go " + playName + "!");
+			    }
+			}
+		    }
 		}
+		    
 		else{
 		    playerFainted = true;
 		    numAlive--;
-		    Counter++;
 		}
 		if (opponent.getCurrHP() <= 0)
 		    opponentFainted = true;
 		
+		    
 	    }
-	    
 		
 	    //if player is faster or tied
 	    if (opponent.getSpeed() <= player.getSpeed()) {
@@ -346,6 +373,28 @@ public class Woo {
 		    System.out.println("You have " + balls + " Pokeballs left.");
 			
 		}
+		else if (playerMove == 6){
+		    System.out.println("Come back! " + playName + "!");
+		    System.out.println("Which Pokemon do you want to swap with your " + playName + "?");
+		    for (int x = 1; x < yourPokemon.size(); x++){
+			System.out.println( x + ". " + yourPokemon.get(x).getName() + ", HP " + yourPokemon.get(x).getCurrHP() + "/" + yourPokemon.get(x).getMaxHP());
+		    }
+		    int subs = 0;
+		    while (subs == 0){
+			subs = Keyboard.readInt();
+			if (subs > yourPokemon.size()-1){
+			    System.out.println("Invalid choice, please choose again:");
+			    subs = 0;
+			}
+			else{
+			    player = yourPokemon.get(subs);
+			    yourPokemon.set(0, yourPokemon.set(subs, yourPokemon.get(0)));
+			    playName = player.getName();
+			    System.out.println("Go " + playName + "!");
+			}
+		    }
+		}
+		
 		//if enemy is still alive
 		if (opponent.getCurrHP() > 0) {
 		    opponentMove = (int)(Math.random() * 5);		
@@ -371,16 +420,14 @@ public class Woo {
 		if (player.getCurrHP() <= 0){
 		    playerFainted = true;
 		    numAlive--;
-		    Counter++;
 		}
 	    }
+	      
 	    //System.out.println(line);
-	    if (playerFainted == true && Counter < yourPokemon.size()){
+	    if (playerFainted == true && yourPokemon.size() != 1){
+		yourPokemon.remove(0);
 		System.out.println("You just lost your " + playName + "! But don't worry because you have more pokemons at hand!");
-		player = yourPokemon.get(Counter);
-		if (player.getCurrHP() != player.getMaxHP()){
-		    player.setCurrHP(player.getMaxHP());
-		}
+		player = yourPokemon.get(0);
 		playName = player.getName();
 		System.out.println("Go " + playName);
 		playerFainted = false;
@@ -389,6 +436,9 @@ public class Woo {
 	    if (opponentFainted == true){
 		if (opponentCaptured == false){
 		    System.out.println("You killed the wild " + oppName + "!");
+		}
+		if (opponentCaptured == true){
+		    yourPokemon.get(yourPokemon.size()-1).setCurrHP(opponent.getMaxHP());
 		}
 		kills++;
 		opponent = new Pokemon();
@@ -425,13 +475,13 @@ public class Woo {
 		opponentCaptured = false;
 		System.out.println("A wild " + oppName + " appeared!\n" );
 	    }
+	    
 	}
-		
 	//Game over
 	System.out.println("Game Over. You have killed and captured a total of " + kills + " Pokemon.");
         numKills+=kills;
     
-    }//end playgame()
+    } //end playgame()
 
     public void BattleTrainer(int numPokes){
       
@@ -446,6 +496,7 @@ public class Woo {
 	boolean opponentFainted = false;
 	ArrayList<Pokemon> yourPokemon = new ArrayList<Pokemon>();
 
+	numPlay++;
 	String choices = "";
 	choices += "1) Pikachu\n";
 	choices += "2) Venusaur\n";
@@ -538,7 +589,6 @@ public class Woo {
     
 	System.out.println(line);
 
-	int Counter = 0;
 	int CounterOppo = 0;
 	Pokemon player = yourPokemon.get(0);
 	String playName = player.getName();
@@ -611,18 +661,23 @@ public class Woo {
 	    System.out.println("\n" + line + "\n" + pname + "'s " + playName + " HP: " + playHP + "%\n" + line);
 		
 	    //displays moves
-	    System.out.println("\nWhat will " + playName + " do?\nPlease enter the number corresponding to the move you want to use:\n1) " + player._move1 + "\t2) " + player._move2 + "\t3) " + player._move3 + "\t4) " + player._move4);
+	    System.out.println("\nWhat will " + playName + " do?\nPlease enter the number corresponding to the move you want to use:\n1) " + player._move1 + "\t2) " + player._move2 + "\t3) " + player._move3 + "\t4) " + player._move4 + "\t5) Swap this pokemon out");
 		
 	    //keeps on asking the user to put in integer until they input a valid input
 	    validMove = false;
 	    while (!validMove) {
 		playerMove = Keyboard.readInt();
 		    
-		if (playerMove >= 1 && playerMove <= 4) {
-		    validMove = true;
+		if (playerMove >= 1 && playerMove <= 5) {
+		    if (playerMove != 5 || yourPokemon.size() != 1){
+			validMove = true;
+		    }
+		    else{
+			System.out.println("You only have this pokemon left!");
+		    }
 		}
 		else {
-		    System.out.println("Please input an integer between 1-4 corresponding to the move you want to use:");
+		    System.out.println("Please input an integer between 1-5 corresponding to the move you want to use:");
 		}
 		    
 	    }
@@ -668,11 +723,31 @@ public class Woo {
 			System.out.println(playName + " used " + player._move4 + "!");
 			player.move4(opponent);
 		    }
+		    else if (playerMove == 5){
+			System.out.println("Come back! " + playName + "!");
+			System.out.println("Which Pokemon do you want to swap with your " + playName + "?");
+			for (int x = 1; x < yourPokemon.size(); x++){
+			    System.out.println( x + ". " + yourPokemon.get(x).getName() + ", HP " + yourPokemon.get(x).getCurrHP() + "/" + yourPokemon.get(x).getMaxHP());
+			}
+			int subs = 0;
+			while (subs == 0){
+			    subs = Keyboard.readInt();
+			    if (subs > yourPokemon.size()-1){
+				System.out.println("Invalid choice, please choose again:");
+				subs = 0;
+			    }
+			    else{
+				player = yourPokemon.get(subs);
+				yourPokemon.set(0, yourPokemon.set(subs, yourPokemon.get(0)));
+				playName = player.getName();
+				System.out.println("Go " + playName + "!");
+			    }
+			}
+		    }
 		}
 		else{
 		    playerFainted = true;
 		    yournumAlive--;
-		    Counter++;
 		}
 		if (opponent.getCurrHP() <= 0){
 		    opponentFainted = true;
@@ -700,6 +775,28 @@ public class Woo {
 		    System.out.println(playName + " used " + player._move4 + "!");
 		    player.move4(opponent);
 		}
+		else if (playerMove == 5){
+		    System.out.println("Come back! " + playName + "!");
+		    System.out.println("Which Pokemon do you want to swap with your " + playName + "?");
+		    for (int x = 1; x < yourPokemon.size(); x++){
+			System.out.println( x + ". " + yourPokemon.get(x).getName() + ", HP " + yourPokemon.get(x).getCurrHP() + "/" + yourPokemon.get(x).getMaxHP());
+		    }
+		    int subs = 0;
+		    while (subs == 0){
+			subs = Keyboard.readInt();
+			if (subs > yourPokemon.size()-1){
+			    System.out.println("Invalid choice, please choose again:");
+			    subs = 0;
+			}
+			else{
+			    player = yourPokemon.get(subs);
+			    yourPokemon.set(0, yourPokemon.set(subs, yourPokemon.get(0)));
+			    playName = player.getName();
+			    System.out.println("Go " + playName + "!");
+			}
+		    }
+		}
+   
 		//if enemy is still alive
 		if (opponent.getCurrHP() > 0) {
 		    opponentMove = (int)(Math.random() * 5);		
@@ -728,14 +825,14 @@ public class Woo {
 		if (player.getCurrHP() <= 0){
 		    playerFainted = true;
 		    yournumAlive--;
-		    Counter++;
 		}
 	    }
 	    //System.out.println(line);
-	    if (playerFainted == true && Counter < numPokes){
+	    if (playerFainted == true && yourPokemon.size() != 1){
 		System.out.println(line);
+		yourPokemon.remove(0);
 		System.out.println("Your " + playName + " fainted! But don't worry because you have more pokemons at hand!");
-		player = yourPokemon.get(Counter);
+		player = yourPokemon.get(0);
 		playName = player.getName();
 		System.out.println("Go " + playName);
 		playerFainted = false;
@@ -753,22 +850,19 @@ public class Woo {
 	}
 		
 	//who wins?
+	System.out.println(line);
 	if (yournumAlive == 0){
 	    System.out.println(line);
 	    System.out.println("Your " + playName + " fainted!\nYou ran out of Pokemon! You paid $1,000,000 to the winner! You blacked out!");
 	}
 	else if (oppnumAlive == 0){
-	    System.out.println("The foe's " + oppName + " fainted!\nYou defeated Youngster Joey!\nYoungster Joey: You got lucky this time!\n You got $1,000,000 for winning");
+	    System.out.println("The foe's " + oppName + " fainted!\nYou defeated Youngster Joey!\nYoungster Joey: You got lucky this time!\nYou got $1,000,000 for winning");
 	    numWin++;
 	}
     }//end playgame()
 
     public String getpName(){
 	return pname;
-    }
-
-    public void setPlay(int play){
-	numPlay+=play;
     }
     public int getPlay(){
 	return numPlay;
@@ -808,7 +902,6 @@ public class Woo {
 	    }
 
 	    if (mode == 1){
-		game.setPlay(1);
 		System.out.println("What type of battle do you want to play?\n 1) 1 vs 1\n 2) 2 vs 2\n 3) 3 vs 3\n 4) 4 vs 4\n 5) 5 vs 5\n 6) 6 vs 6\n 7) Survival Mode");
 		mode = 0;
 		while (mode == 0){
