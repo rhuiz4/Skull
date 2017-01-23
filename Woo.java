@@ -264,7 +264,7 @@ public class Woo {
 		    System.out.println("The wild " + oppName + " used " + opponent._move4 + "!");
 		    opponent.move4(player);
 		}
-		System.out.println(player.getCurrHP());    
+		
 		//if player's Pokemon is still alive
 		if (player.getCurrHP() > 0){
 		    if (playerMove == 1){
