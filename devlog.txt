@@ -26,6 +26,7 @@ COOL STUFF LEARNED
 -Ansi art looks cool!!
 -Git is not a dark scary abyss that you should avoid at all costs.
 -You can indent multiple lines at once!! (how did i never think of this)
+-ArrayList is soooo much simpler to use than arrays.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -117,7 +118,7 @@ Rihui Zheng :: -Made class for Scyther, made ansi art for Scyther.
       	       -Made healing moves possible, changed moves in some classes to healing.
 ==============================================================
 
-2017-01-21
+2017-01-22
 -------------------------------------------------------------
 Tim Wang :: Added pokeball capture option in survival mode & switching Pokemon in the middle of battle in Woo. Added mutator setCurrHP(int hp) in Pokemon
 Rihui Zheng ::
