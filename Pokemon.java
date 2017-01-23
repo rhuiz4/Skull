@@ -52,4 +52,8 @@ public class Pokemon{
 	return _type1;}
     public String getType2(){
 	return _type2;}
+
+    public void setCurrHP(int hp){
+	_currhp = hp;
+    }
 }
