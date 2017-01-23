@@ -50,18 +50,18 @@ public class Woo {
 
 	System.out.println(line + "\n\n\n");
 	System.out.println("\u001B[33m                                 .::.                                 ");	
-	System.out.println("\u001B[33m                               .;:**                                  ");
-	System.out.println("\u001B[33m                               `                                      ");
-	System.out.println("\u001B[33m   .:XHHHHk.              db.   .;;.     dH  MX                       ");
-	System.out.println("\u001B[33m oMMMMMMMMMMM       ~MM  dMMP :MMMMMR   MMM  MR      ~MRMN            ");
-	System.out.println("\u001B[33m QMMMMMb   MMX       MMMMMMP !MX^ :M~   MMM MMM  .oo. XMMM  MMM       ");
-	System.out.println("\u001B[33m   `MMMM.  )M> :X!Hk. MMMM   XMM.o^  .  MMMMMMM X?XMMM MMM>!MMP       ");
-	System.out.println("\u001B[33m    ^MMMb.dM! XM M^?M MMMMMX.`MMMMMMMM~ MM MMM XM `^ MX MMXXMM        ");
-	System.out.println("\u001B[33m     ~MMMMM~ XMM. .XM XM`^MMMb.~*?**~ .MMX V t MMbooMM XMMMMMP        ");
-	System.out.println("\u001B[33m      ?MMM>  YMMMMMM! MM   `?MMRb.    `MMM   !L;MMMMM XM IMMM         ");
-	System.out.println("\u001B[33m       MMMX   ^MMMM^  MM       ~%:           !Mh.    dMI IMMP         ");
-	System.out.println("\u001B[33m       ^MMM.                                             IMX          ");
-	System.out.println("\u001B[33m        ~M!M                                             IMP          ");
+	System.out.println("                               .;:**                                  ");
+	System.out.println("                               `                                      ");
+	System.out.println("   .:XHHHHk.              db.   .;;.     dH  MX                       ");
+	System.out.println(" oMMMMMMMMMMM       ~MM  dMMP :MMMMMR   MMM  MR      ~MRMN            ");
+	System.out.println(" QMMMMMb   MMX       MMMMMMP !MX^ :M~   MMM MMM  .oo. XMMM  MMM       ");
+	System.out.println("   `MMMM.  )M> :X!Hk. MMMM   XMM.o^  .  MMMMMMM X?XMMM MMM>!MMP       ");
+	System.out.println("    ^MMMb.dM! XM M^?M MMMMMX.`MMMMMMMM~ MM MMM XM `^ MX MMXXMM        ");
+	System.out.println("     ~MMMMM~ XMM. .XM XM`^MMMb.~*?**~ .MMX V t MMbooMM XMMMMMP        ");
+	System.out.println("      ?MMM>  YMMMMMM! MM   `?MMRb.    `MMM   !L;MMMMM XM IMMM         ");
+	System.out.println("       MMMX   ^MMMM^  MM       ~%:           !Mh.    dMI IMMP         ");
+	System.out.println("       ^MMM.                                             IMX          ");
+	System.out.println("        ~M!M                                             IMP          \u001B[0m");
 	System.out.println("\n\n\nA game by Jake Zaia, Rihui Zheng, and Tim Wang. Enjoy.\n   --Pokemon sprites by git user vsoch\n" + line + "\n\n");
 	//Credit to github user vsoch:        https://github.com/vsoch/pokemon-ascii
         
