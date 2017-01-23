@@ -1,9 +1,20 @@
 //Team Skull: Rihui Zheng, Jake Zaia, Tim Wang
 //APCS Pd5
 //Final Project: Gotta Catch 'Em All
+//2017-01-23
 
-import cs1.Keyboard;
-import java.util.ArrayList;
+import cs1.Keyboard; //Used for user input
+import java.util.ArrayList; //Used for storing Pokemon
+
+/*
+  Driver class Woo for terminal based Pokemon battles
+  Woo hosts all other classes
+  Creates instances of itself for each game, however a bulk of calculations and methods are stored in other files.
+     (See Pokemon, cs1.Keyboard, Move, BattleUtils, & AI)
+*/
+
+
+
 public class Woo {
 
     private static void printPokemon(Pokemon p1, Pokemon p2){ //Combines images of 2 pokemon and prints them
@@ -31,9 +42,9 @@ public class Woo {
 
     private static String line = "=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*="; //The line used to separate messages
     
-    private String pname = ""; //The name the player wishes to be calls\ed
-    private int numKills, numWin, numPlay = 0;
-    private int _hardMode = -1;
+    private String pname = ""; //The name the player wishes to be called
+    private int numKills, numWin, numPlay = 0; //Stats about the player
+    private int _hardMode = -1; //If the game is in hardmode
     
     public void newgame(){ //Runs once on startup
 
@@ -89,13 +100,13 @@ public class Woo {
 	
     public void playSurvival(){ //Play against an unlimited number of foes until you run out of Pokemon
 
-	int numAlive = 7;
+	int numAlive = 7; //Number of pokemon the player has alive
 	int oppHP = 0;
 	int playHP = 0;
 	int playerMove = 0;
 	int opponentMove = 0;
-	int kills = 0;
-	int balls = 3;
+	int kills = 0; //Total Pokemon beaten
+	int balls = 3; //Total amount of Pokeballs left
 	int chance = 0;
 	boolean validMove = false;
 	boolean playerFainted = false;
@@ -121,7 +132,7 @@ public class Woo {
 
 	//user chooses their own Pokemen
 	System.out.println(line);
-	System.out.println("So you want to battle. Lets see, which of these Pokemons do you want to be your partners?\n");
+	System.out.println("So you want to battle. Lets see, which of these Pokemon do you want to be your partners?\n");
 	for (int x = 1; x < 8; x++){ //Allows the user to make a choice of Pokemon
 	    Pokemon saved;
 
@@ -132,7 +143,7 @@ public class Woo {
 	    System.out.println(msg);
 
 	    int pChoice = 0;
-	    while (pChoice == 0) {
+	    while (pChoice == 0) { //Adds the Pokemon the player wishes to use
 		pChoice = Keyboard.readInt();
 		if (pChoice == 13){
 		    pChoice = (int) (Math.random() * 12 + 1);
@@ -229,7 +240,7 @@ public class Woo {
 	
 	
 	System.out.println("A wild " + oppName + " appeared!\n" );
-	while (numAlive != 0){
+	while (numAlive != 0){ //Runs the battle
 	    //displays HP
 	    oppHP = (int)(Math.round((double)opponent.getCurrHP() / opponent.getMaxHP() * 100));
 	    playHP =(int)(Math.round((double) player.getCurrHP() / player.getMaxHP() * 100));
@@ -456,7 +467,7 @@ public class Woo {
 	    //System.out.println(line);
 	    if (playerFainted == true && yourPokemon.size() != 1){
 		yourPokemon.remove(0);
-		System.out.println("You just lost your " + playName + "! But don't worry because you have more pokemons at hand!");
+		System.out.println("You just lost your " + playName + "! But don't worry because you have more pokemon at hand!");
 		player = yourPokemon.get(0);
 		playName = player.getName();
 		System.out.println("Go " + playName);
@@ -873,7 +884,7 @@ public class Woo {
 	    if (playerFainted == true && yourPokemon.size() != 1){
 		System.out.println(line);
 		yourPokemon.remove(0);
-		System.out.println("Your " + playName + " fainted! But don't worry because you have more pokemons at hand!");
+		System.out.println("Your " + playName + " fainted! But don't worry because you have more pokemon at hand!");
 		player = yourPokemon.get(0);
 		playName = player.getName();
 		System.out.println("Go " + playName);
@@ -973,7 +984,7 @@ public class Woo {
 		System.out.println("Your participated in " + game.getPlay() + " battles.");
 		System.out.println("You won " + game.getWin() + " times.");
 		System.out.println("\n" + line + "\nSurvival Mode:\n");
-		System.out.println("In survival mode, you killed and captured a total of " + game.getKill() + " Pokemons.");
+		System.out.println("In survival mode, you killed and captured a total of " + game.getKill() + " Pokemon.");
 		System.out.println(line);
 	    }
 	    if (mode == 3) {
