@@ -76,9 +76,12 @@ public class Woo {
 	int playerMove = 0;
 	int opponentMove = 0;
 	int kills = 0;
+	int balls = 3;
+	int chance = 0;
 	boolean validMove = false;
 	boolean playerFainted = false;
 	boolean opponentFainted = false;
+	boolean opponentCaptured = false;
 	ArrayList<Pokemon> yourPokemon = new ArrayList<Pokemon>();
 
 	String choices = "";
@@ -171,7 +174,7 @@ public class Woo {
 	    }
 	    System.out.println("You chose " + yourPokemon.get(x-1).getName() + "!");
 	}
-    
+	System.out.println("You received 3 Pokeballs!");
 	System.out.println(line);
 
 	int Counter = 0;
@@ -218,18 +221,23 @@ public class Woo {
 	    System.out.println("\n" + line + "\n" + pname + "'s " + playName + " HP: " + playHP + "%\n" + line);
 		
 	    //displays moves
-	    System.out.println("\nWhat will " + playName + " do?\nPlease enter the number corresponding to the move you want to use:\n1) " + player._move1 + "\t2) " + player._move2 + "\t3) " + player._move3 + "\t4) " + player._move4);
+	    System.out.println("\nWhat will " + playName + " do?\nPlease enter the number corresponding to the move you want to use:\n1) " + player._move1 + "\t2) " + player._move2 + "\t3) " + player._move3 + "\t4) " + player._move4 + "\t5) Use a Pokeball");
 		
 	    //keeps on asking the user to put in integer until they input a valid input
 	    validMove = false;
 	    while (!validMove) {
 		playerMove = Keyboard.readInt();
 		    
-		if (playerMove >= 1 && playerMove <= 4) {
-		    validMove = true;
+		if (playerMove >= 1 && playerMove <= 5) {
+		    if (playerMove != 5 || balls != 0){
+			validMove = true;
+		    }
+		    else{
+			System.out.println("You ran out of Pokeballs!");
+		    }
 		}
 		else {
-		    System.out.println("Please input an integer between 1-4 corresponding to the move you want to use:");
+		    System.out.println("Please input an integer between 1-5 corresponding to the move you want to use:");
 		}
 		    
 	    }
@@ -256,7 +264,7 @@ public class Woo {
 		    System.out.println("The wild " + oppName + " used " + opponent._move4 + "!");
 		    opponent.move4(player);
 		}
-		    
+		System.out.println(player.getCurrHP());    
 		//if player's Pokemon is still alive
 		if (player.getCurrHP() > 0){
 		    if (playerMove == 1){
@@ -275,6 +283,21 @@ public class Woo {
 			System.out.println(playName + " used " + player._move4 + "!");
 			player.move4(opponent);
 		    }
+		    else if (playerMove == 5){
+		        System.out.println("You attempt to catch the wild " + oppName + "!");
+			balls--;
+			chance = (int)(Math.random() * 15);
+			if (oppHP < chance){
+			    System.out.println("Gotcha! " + oppName + " was caught!");
+			    yourPokemon.add(opponent);
+			    opponent.setCurrHP(0);
+			    numAlive++;
+			    opponentCaptured = true;
+			}
+			else{
+			    System.out.println("Oh no! The Pokemon broke free!");
+			}
+		    }
 		}
 		else{
 		    playerFainted = true;
@@ -283,8 +306,9 @@ public class Woo {
 		}
 		if (opponent.getCurrHP() <= 0)
 		    opponentFainted = true;
-		    
+		
 	    }
+	    
 		
 	    //if player is faster or tied
 	    if (opponent.getSpeed() <= player.getSpeed()) {
@@ -303,6 +327,22 @@ public class Woo {
 		else if (playerMove == 4){
 		    System.out.println(playName + " used " + player._move4 + "!");
 		    player.move4(opponent);
+		}
+		else if (playerMove == 5){
+		    System.out.println("You attempt to catch the wild " + oppName + "!");
+		    balls--;
+		    chance = (int)(Math.random() * 15);
+		    if (oppHP < chance){
+			System.out.println("Gotcha! " + oppName + " was caught!");
+			yourPokemon.add(opponent);
+			opponent.setCurrHP(0);
+			numAlive++;
+			opponentCaptured = true;
+		    }
+		    else{
+			System.out.println("Oh no! The Pokemon broke free!");
+		    }
+			
 		}
 		//if enemy is still alive
 		if (opponent.getCurrHP() > 0) {
@@ -326,61 +366,67 @@ public class Woo {
 		}
 		else
 		    opponentFainted = true;
-		    if (player.getCurrHP() <= 0){
-			playerFainted = true;
-			numAlive--;
-			Counter++;
-		    }
+		if (player.getCurrHP() <= 0){
+		    playerFainted = true;
+		    numAlive--;
+		    Counter++;
 		}
-		//System.out.println(line);
-	        if (playerFainted == true && Counter < 8){
-		    System.out.println("You just lost your " + playName + "! But don't worry because you have more pokemons at hand!");
-		    player = yourPokemon.get(Counter);
-		    playName = player.getName();
-		    System.out.println("Go " + playName);
-		    playerFainted = false;
-		    System.out.println("You have " + numAlive + " Pokemon remaining.");
+	    }
+	    //System.out.println(line);
+	    if (playerFainted == true && Counter < yourPokemon.size()){
+		System.out.println("You just lost your " + playName + "! But don't worry because you have more pokemons at hand!");
+		player = yourPokemon.get(Counter);
+		if (player.getCurrHP() != player.getMaxHP()){
+		    player.setCurrHP(player.getMaxHP());
 		}
-		if (opponentFainted == true){
+		playName = player.getName();
+		System.out.println("Go " + playName);
+		playerFainted = false;
+		System.out.println("You have " + numAlive + " Pokemon remaining.");
+	    }
+	    if (opponentFainted == true){
+		if (opponentCaptured == false){
 		    System.out.println("You killed the wild " + oppName + "!");
-		    kills++;
-		    opponent = new Pokemon();
-		    oChoice = (int) (Math.random() * 6 + 1);
-		    if (oChoice == 1)
-			opponent = new Pikachu();
-		    else if (oChoice == 2)
-			opponent = new Venusaur();
-		    else if (oChoice == 3)
-			opponent = new Charizard();
-		    else if (oChoice == 4)
-			opponent = new Blastoise();
-		    else if (oChoice == 5)
-			opponent = new Mewtwo();
-		    else if (oChoice == 6)
-			opponent = new Lapras();
-		    else if (oChoice == 7)
-			opponent = new Gengar();
-		    else if (oChoice == 8)
-			opponent = new Snorlax();
-		    else if (oChoice == 9)
-			opponent = new Dragonite();
-		    else if (oChoice == 10)
-			opponent = new Scyther();
-		    else if (oChoice == 11)
-			opponent = new Machamp();
-		    else if (oChoice == 12)
-			opponent = new Aerodactyl();
-		    
-		    
-		    
-		    oppName = opponent.getName();
-		    opponentFainted = false;
-		    System.out.println("A wild " + oppName + " appeared!\n" );
 		}
+		kills++;
+		opponent = new Pokemon();
+		oChoice = (int) (Math.random() * 12 + 1);
+		if (oChoice == 1)
+		    opponent = new Pikachu();
+		else if (oChoice == 2)
+		    opponent = new Venusaur();
+		else if (oChoice == 3)
+		    opponent = new Charizard();
+		else if (oChoice == 4)
+		    opponent = new Blastoise();
+		else if (oChoice == 5)
+		    opponent = new Mewtwo();
+		else if (oChoice == 6)
+		    opponent = new Lapras();
+		else if (oChoice == 7)
+		    opponent = new Gengar();
+		else if (oChoice == 8)
+		    opponent = new Snorlax();
+		else if (oChoice == 9)
+		    opponent = new Dragonite();
+		else if (oChoice == 10)
+		    opponent = new Scyther();
+		else if (oChoice == 11)
+		    opponent = new Machamp();
+		else if (oChoice == 12)
+		    opponent = new Aerodactyl();
+		    
+		    
+		    
+		oppName = opponent.getName();
+		opponentFainted = false;
+		opponentCaptured = false;
+		System.out.println("A wild " + oppName + " appeared!\n" );
+	    }
 	}
 		
-	//who wins?
-	System.out.println("Game Over. You have killed a total of " + kills + " Pokemon.");
+	//Game over
+	System.out.println("Game Over. You have killed and captured a total of " + kills + " Pokemon.");
         numKills+=kills;
     
     }//end playgame()
@@ -790,7 +836,7 @@ public class Woo {
 		System.out.println("Your participated in " + game.getPlay() + " battles.");
 		System.out.println("You won " + game.getWin() + " times.");
 		System.out.println("\n" + line + "\nSurvival Mode:\n");
-		System.out.println("In survival mode, you killed a total of " + game.getKill() + " Pokemons.");
+		System.out.println("In survival mode, you killed and captured a total of " + game.getKill() + " Pokemons.");
 		System.out.println(line);
 	    }
 	    if (mode == 3) {
